@@ -99,7 +99,7 @@ const RenderInput = ({ props }: { props: CustomProps }) => {
 					value={field?.value as string}
 					onChange={onChange}
 					onBlur={onBlur}
-					className="resize-none"
+					className="resize-none i-reset"
 				/>
 			);
 

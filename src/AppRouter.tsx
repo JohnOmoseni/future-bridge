@@ -6,12 +6,10 @@ import GetStartedSuccess from "./app/(website1)/get-started/success/page";
 import FAQs from "./app/(website1)/faqs/page";
 import Contact from "./app/(website1)/contact/page";
 import LayoutProvider from "./providers/LayoutProvider";
-import ScrollToTop from "./components/ScrollToTop";
 
 const AppRouter = () => {
 	return (
 		<Router>
-			<ScrollToTop />
 			<Routes>
 				<Route element={<LayoutProvider />}>
 					<Route path="/" element={<Home />} />

@@ -7,7 +7,7 @@ function Hero() {
 	return (
 		<div
 			id="home"
-			className="relative isolate grid min-h-dvh grid-cols-1 gap-8 pt-14 sm:pt-[8%] md:gap-12"
+			className="relative isolate grid grid-cols-1 gap-8 pt-14 sm:pt-[8%] md:gap-12"
 		>
 			<div className="flex-1 px-3 max-md:px-6">
 				<h1 className="relative px-3 text-center">
@@ -35,7 +35,7 @@ function Hero() {
 				</Link>
 			</div>
 
-			<div className="row-flex relative -z-10 mx-auto w-[96%] md:w-[90%] xl:w-[80%]">
+			<div className="row-flex relative min-h-[60vh] -z-10 mx-auto w-[96%] md:w-[90%] xl:w-[80%]">
 				<img
 					src={person}
 					alt="hero"
