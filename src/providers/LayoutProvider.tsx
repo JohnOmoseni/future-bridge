@@ -1,4 +1,4 @@
-import { ReactNode, Suspense, useState } from "react";
+import { Suspense, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Outlet } from "react-router-dom";
 import Header from "@/layouts/Header";
@@ -6,7 +6,7 @@ import Menu from "@/layouts/Menu";
 import Footer from "@/layouts/Footer";
 import FallbackLoader from "@/components/fallback/FallbackLoader";
 
-const LayoutProvider = ({ children }: { children?: ReactNode }) => {
+const LayoutProvider = () => {
 	const [openMenu, setOpenMenu] = useState(false);
 
 	return (
