@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Tilt } from "react-tilt";
 import { cn } from "@/lib/utils";
+import { feature3_sm } from "@/constants/icons";
 
 const defaultOptions = {
 	reverse: false, // reverse the tilt direction
@@ -41,12 +42,23 @@ export const FeatureCard = ({
 					{subtitle}
 				</p>
 				<div className="relative mt-4 h-[250px] w-full overflow-hidden rounded-md bg-background-300 p-4">
-					<div className="absolute left-4 top-4 h-full w-full md:left-8">
+					<div className="absolute left-4 top-4 size-full lg:size-auto md:left-8">
 						<img
 							src={img}
 							alt=""
-							className="!top-1.5 !h-[90%] w-full object-contain object-center sm:object-fill"
+							className={cn(
+								"!top-1.5 !h-[90%] w-full object-center object-fill",
+								idx === 3 && "hidden sm:block"
+							)}
 						/>
+
+						{idx === 3 && (
+							<img
+								src={feature3_sm}
+								alt=""
+								className="!top-1.5 !h-[90%] w-full block sm:hidden object-center object-fill"
+							/>
+						)}
 					</div>
 				</div>
 			</motion.div>

@@ -17,7 +17,7 @@ function Hero() {
 					Into A Beacon Of{" "}
 					<span className="relative font-semibold">
 						Excellence
-						<Star className="absolute -right-14 top-1/2 h-fit w-fit -translate-y-1/2 object-contain" />
+						<Star className="absolute -right-14 top-1/2 size-10 -translate-y-1/2 object-contain" />
 					</span>
 				</h1>
 

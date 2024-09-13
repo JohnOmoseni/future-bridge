@@ -37,7 +37,7 @@ import aboutframe from "/images/about-frame.png";
 import feature1 from "/images/feature1.png";
 import feature2 from "/images/feature2.png";
 import feature3 from "/images/feature3.png";
-import feature3_lg from "/images/feature3-lg.png";
+import feature3_sm from "/images/feature3-sm.png";
 import feature4 from "/images/feature4.png";
 import feature5 from "/images/feature5.png";
 
@@ -78,7 +78,7 @@ export {
 	feature1,
 	feature2,
 	feature3,
-	feature3_lg,
+	feature3_sm,
 	feature4,
 	feature5,
 	hero1,

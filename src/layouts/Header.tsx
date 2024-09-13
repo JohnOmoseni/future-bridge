@@ -13,7 +13,7 @@ function Header({ setOpenMenu }: HeaderProps) {
 	const isSuccessPage = pathname.includes("get-started/success");
 
 	return (
-		<div className="relative z-10 max-h-[75px] min-h-[68px] w-full px-3 py-3 shadow-sm md:pb-0">
+		<div className="relative z-10 h-[70px] min-h-[68px] w-full px-3 py-3 shadow-sm md:pb-0">
 			<div className="row-flex-btwn mx-auto gap-4 sm:w-[96%]">
 				<Link to="/" className="">
 					<Logo className="h-fit w-fit max-md:mx-auto max-sm:max-w-[260px]" />
@@ -23,7 +23,7 @@ function Header({ setOpenMenu }: HeaderProps) {
 					className={cn(isSuccessPage ? "hidden" : "flex w-full justify-end")}
 				>
 					<div
-						className="icon group mt-[0.93rem] sm:!hidden"
+						className="icon group mt-[14px] sm:!hidden"
 						onClick={() => setOpenMenu && setOpenMenu(true)}
 					>
 						<MenuIcon
