@@ -29,18 +29,15 @@ body {
 	width: 100%;
 	height: 100dvh;
 	min-height: 100dvh;
-	overflow: hidden;
+	overflow: hidden auto;
 	font-size: 0.9rem;
 	position: relative;
 }
 
 .wrapper {
-	height: 100dvh;
-	min-height: 100dvh;
 	display: flex;
 	flex-direction: column;
 	margin: 0 auto;
-	overflow: auto;
 }
 
 .wrapper :is(a, .icon, button) {
