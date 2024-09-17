@@ -33,14 +33,9 @@ body {
 	position: relative;
 }
 
-#root {
-	height: 100%;
-	overflow: hidden auto;
-}
-
 .wrapper {
-	display: flex;
-	flex-direction: column;
+	height: 100dvh;
+	overflow: hidden auto;
 	margin: 0 auto;
 }
 
