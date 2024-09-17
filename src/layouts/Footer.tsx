@@ -90,7 +90,7 @@ const Footer = () => {
 				</div>
 			</div>
 
-			<div className="mx-6 flex border-t-2 border-grey px-3 py-5">
+			<div className="mx-6 flex border-t border-grey px-3 py-5">
 				<span className="row-flex-start text-center text-sm leading-5 max-md:mx-auto">
 					<Link
 						to="#"

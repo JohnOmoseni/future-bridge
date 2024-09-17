@@ -12,12 +12,12 @@ const LayoutProvider = () => {
 	const scrollRef = useRef(null);
 
 	return (
-		<div className="font-dm-sans">
+		<>
 			<ScrollToTop scrollRef={scrollRef} />
 			<AnimatePresence>
 				{openMenu && <Menu openMenu={openMenu} setOpenMenu={setOpenMenu} />}
 			</AnimatePresence>
-			<div ref={scrollRef} className="wrapper">
+			<div ref={scrollRef} className="wrapper font-dm-sans">
 				<Header setOpenMenu={setOpenMenu} />
 
 				<Suspense fallback={<FallbackLoader />}>
@@ -26,7 +26,7 @@ const LayoutProvider = () => {
 
 				<Footer />
 			</div>
-		</div>
+		</>
 	);
 };
 
