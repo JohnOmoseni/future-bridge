@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { animateFn, linksAni } from "@/lib/animate";
@@ -27,7 +25,7 @@ function NavLinks({ label, href, openMenu, setOpenMenu, idx }: NavLinkProps) {
 			>
 				<motion.span
 					className={cn(
-						"tracking-snug font-semibold capitalize",
+						"tracking-snug font-semibold capitalize xl:whitespace-nowrap leading-4 text-center",
 						isActive && "text-foreground-variant"
 					)}
 				>

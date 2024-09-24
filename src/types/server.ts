@@ -2,7 +2,7 @@ export interface ContactUsType {
 	email: string;
 	name: string;
 	message: string;
-	subject: string;
+	subject?: string;
 }
 
 export interface RegisterSchoolType {

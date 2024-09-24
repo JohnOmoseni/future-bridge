@@ -1,15 +1,15 @@
 import QueryProvider from "./providers/QueryProvider";
-import AppRouter from "./AppRouter";
+import MainRouter from "./Router";
 import { Toaster } from "./components/ui/sonner";
 
+import "@/styles/utilities.css";
 import "@/styles/globals.css";
 import "@/styles/index.css";
-import "@/styles/utilities.css";
 
 function App() {
 	return (
 		<QueryProvider>
-			<AppRouter />
+			<MainRouter />
 			<Toaster richColors />
 		</QueryProvider>
 	);
