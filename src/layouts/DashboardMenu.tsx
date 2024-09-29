@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { sidebarLinks } from "@/constants";
 import { Close } from "@/constants/icons";
 import { animateFn, revealMenu, slideinVariant } from "@/lib/animate";
 import { MenuProps } from "@/types";

@@ -8,7 +8,6 @@ import { publicApi } from "@/server/req/requestApis";
 import { toast } from "sonner";
 
 import { ContactUsType } from "@/types/server";
-import FormWrapper from "../FormWrapper";
 import CustomFormField, { FormFieldType } from "../CustomFormField";
 import { Button } from "@/components/CustomButton";
 
@@ -48,16 +47,15 @@ const ContactUsForm = () => {
 		}
 	};
 
-	const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
-		useFormik({
-			initialValues: {
-				name: "",
-				email: "",
-				message: "",
-			},
-			validationSchema: ContactSchema2,
-			onSubmit,
-		});
+	const { values, errors, touched, handleBlur, handleChange } = useFormik({
+		initialValues: {
+			name: "",
+			email: "",
+			message: "",
+		},
+		validationSchema: ContactSchema2,
+		onSubmit,
+	});
 
 	return (
 		<div className="flex-column gap-8">

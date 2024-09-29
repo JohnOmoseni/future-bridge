@@ -1,4 +1,4 @@
-import { about, feature1, feature2, feature3 } from "@/constants/icons2";
+import { feature1, feature2, feature3 } from "@/constants/icons2";
 
 function Features() {
 	return (

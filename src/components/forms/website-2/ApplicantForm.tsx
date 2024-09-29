@@ -23,26 +23,19 @@ const ApplicantForm = ({ step, nextStep }: FormProps) => {
 		}
 	};
 
-	const {
-		values,
-		errors,
-		touched,
-		setFieldValue,
-		handleBlur,
-		handleChange,
-		handleSubmit,
-	} = useFormik({
-		initialValues: {
-			name: "",
-			schoolName: "",
-			sex: "",
-			yearOfGrad: "",
-			dob: "",
-			class: "",
-		},
-		validationSchema: ApplicantFormSchema,
-		onSubmit,
-	});
+	const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
+		useFormik({
+			initialValues: {
+				name: "",
+				schoolName: "",
+				sex: "",
+				yearOfGrad: "",
+				dob: "",
+				class: "",
+			},
+			validationSchema: ApplicantFormSchema,
+			onSubmit,
+		});
 
 	const fields = [
 		[
