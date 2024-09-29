@@ -86,7 +86,6 @@ const DocumentForm = ({ step, nextStep, prevStep }: FormProps) => {
 					<FileUpload
 						title="Upload Testimonial or First school leaving certificate (if available)"
 						name="certificate_upload"
-						required
 						onFileChange={(file) => {
 							setFieldValue("certificate_upload", file);
 						}}

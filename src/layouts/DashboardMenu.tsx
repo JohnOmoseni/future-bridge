@@ -43,7 +43,7 @@ function Menu({ openMenu, setOpenMenu }: MenuProps) {
 						))}
 					</nav>
 
-					<Link to="/get-started" className="mx-auto mt-auto">
+					<Link to="/dashboard/admission" className="mx-auto mt-auto">
 						<Button
 							title="Get Started"
 							className="!min-w-[100px] rounded-lg px-5"

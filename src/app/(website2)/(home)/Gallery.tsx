@@ -28,12 +28,12 @@ function Gallery() {
 				<img
 					src={gallery_3}
 					alt=""
-					className="size-full col-span-2 sm:col-[1/3] object-cover max-sm:rounded-sm"
+					className="size-full col-span-2 sm:col-[1/3] object-cover"
 				/>
 				<img
 					src={gallery4_home}
 					alt=""
-					className="size-full col-span-2 sm:col-[3/3] sm:row-[1/3] object-cover max-sm:rounded-sm"
+					className="size-full col-span-2 sm:col-[3/3] sm:row-[1/3] object-cover"
 				/>
 			</div>
 		</div>

@@ -8,10 +8,10 @@ function ApplicationSuccess() {
 		<SectionWrapper containerStyles="!py-1">
 			<div className="grid place-items-center">
 				<div className="flex-column !items-center gap-6">
-					<h3 className="sm:text-3xl">Congratulations!</h3>
+					<h3 className="text-2xl sm:text-3xl">Congratulations!</h3>
 
 					<div className="relative my-4">
-						<SuccessIcon className="h-fit w-fit" />
+						<SuccessIcon className="h-fit min-w-72 w-full xl:w-fit" />
 					</div>
 
 					<div className="flex-column mb-4 max-w-xl">

@@ -75,7 +75,7 @@ function FileUpload({
 				<div className="flex-column gap-2">
 					<Label
 						className={cn(
-							"text-base w-max relative font-medium after:absolute after:-right-2 after:text-red-500 after:-top-1 after:text-lg",
+							"text-base sm:w-max relative font-medium after:absolute after:-right-2 after:text-red-500 after:-top-1 after:text-lg",
 							required && "after:content-['*']"
 						)}
 					>

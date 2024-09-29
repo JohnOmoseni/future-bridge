@@ -35,7 +35,7 @@ function Posts() {
 							<div
 								key={idx}
 								className={cn(
-									"rounded-lg shadow overflow-hidden  bg-no-repeat bg-cover relative col-span-1",
+									"rounded-lg shadow overflow-hidden  bg-no-repeat bg-center bg-cover relative col-span-1",
 									idx === 0 && "col-[1/-1]"
 								)}
 								style={{ backgroundImage: `url(${img})` }}
@@ -58,7 +58,7 @@ function Posts() {
 									</h4>
 
 									{idx !== 0 && (
-										<div className="w-full brightness-90 mt-3 row-flex-btwn text-xs fap-4">
+										<div className="w-full brightness-[0.8] mt-3 row-flex-btwn text-xs fap-4">
 											<Link to="#" className="">
 												Read
 											</Link>
@@ -100,7 +100,7 @@ function PostCard() {
 					</h3>
 				</Link>
 
-				<p className="brightness-75 my-1.5 pr-1 ">
+				<p className="brightness-75 max-sm:text-base max-sm:leading-5 my-1.5 pr-1 ">
 					We are thrilled to announce the arrival of our dynamic new Principal,
 					Rev Fr Samuel A. Taiwo{" "}
 				</p>

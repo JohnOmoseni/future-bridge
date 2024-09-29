@@ -17,25 +17,17 @@ function Gallery() {
 					<h3>Excursion to Whispering Palm, Badagry</h3>
 
 					<div className="mt-6 sm:mt-8 grid-cols-2 grid-rows-[100px_150px_300px] grid sm:grid-cols-[1fr_1fr_1.5fr] sm:grid-rows-[200px_250px] gap-x-3.5 gap-y-3">
-						<img
-							src={gallery_1}
-							alt=""
-							className="size-full object-cover max-sm:rounded-sm"
-						/>
-						<img
-							src={gallery_2}
-							alt=""
-							className="size-full object-cover max-sm:rounded-sm"
-						/>
+						<img src={gallery_1} alt="" className="size-full object-cover" />
+						<img src={gallery_2} alt="" className="size-full object-cover" />
 						<img
 							src={gallery_3}
 							alt=""
-							className="size-full col-span-2 sm:col-[1/3] object-cover max-sm:rounded-sm"
+							className="size-full col-span-2 sm:col-[1/3] object-cover"
 						/>
 						<img
 							src={gallery_4}
 							alt=""
-							className="size-full col-span-2 sm:col-[3/3] sm:row-[1/3] object-cover max-sm:rounded-sm"
+							className="size-full col-span-2 sm:col-[3/3] sm:row-[1/3] object-cover"
 						/>
 					</div>
 				</div>

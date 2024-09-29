@@ -15,23 +15,19 @@ function Hero() {
 			<div className="size-full flex-column gap-8 sm:row-flex !items-start">
 				<div className="flex-1 px-[max(1.5em,_6%)]">
 					<h1 className="relative max-sm:text-center">
-						<span className="relative isolate  font-inter text-white">
+						<span className="relative isolate text-white">
 							Sha
 							<HeroBubble className="object-contain -z-10 absolute -left-4 -top-1  max-sm:-top-4" />
 							<img
 								src={herotextBubble}
 								alt="hero"
-								className="object-contain  -z-30 absolute left-1 -top-1 max-sm:hidden"
+								className="object-contain -z-50 absolute left-1 -top-1 max-sm:hidden"
 							/>
 						</span>
 						ping the{" "}
-						<span className="font-semibold text-secondary">
-							leaders of tomorrow{" "}
-						</span>{" "}
-						is our top <br className="hidden lg:block" /> priority at {""}
-						<span className="font-semibold text-secondary">
-							St. Endas College.
-						</span>
+						<span className="text-secondary">leaders of tomorrow </span> is our
+						top <br className="hidden lg:block" /> priority at {""}
+						<span className="text-secondary">St. Endas College.</span>
 					</h1>
 
 					<TextGenerateEffect
@@ -43,7 +39,7 @@ function Hero() {
 						to="/dashboard/admission"
 						className="mt-10 row-flex mx-auto sm:!justify-start"
 					>
-						<Button title="Register now" className="px-10 py-3.5 text-lg" />
+						<Button title="Register now" className="px-10 !py-6 text-lg" />
 					</Link>
 				</div>
 

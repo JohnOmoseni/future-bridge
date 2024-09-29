@@ -10,7 +10,7 @@ function Features() {
 			<h3>What do we have to show at St. Endas?</h3>
 
 			<div className="mt-6 md:mt-12">
-				<div className="flex-column max-sm:gap-y-5 sm:grid grid-cols-[repeat(auto-fit,_minmax(100px,_1fr))] gap-6 lg:grid-rows-[180px_auto_150px] lg:grid-cols-[350px_auto_auto]">
+				<div className="flex-column max-sm:gap-y-7 sm:grid grid-cols-[repeat(auto-fit,_minmax(100px,_1fr))] gap-6 lg:grid-rows-[180px_auto_150px] lg:grid-cols-[350px_auto_auto]">
 					<img
 						src={feature1}
 						alt=""

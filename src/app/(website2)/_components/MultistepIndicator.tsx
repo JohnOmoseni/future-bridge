@@ -28,7 +28,7 @@ const MultiStepForm = ({ step }: { step: number }) => {
 						>
 							{step >= idx + 1 ? "\u2713" : idx + 1}
 						</div>
-						<p className="mt-2 leading-4 w-min min-h-8 px-1 max-[400px]:text-sm line-clamp-2">
+						<p className="mt-2 leading-4 w-min min-h-8 max-[400px]:text-xs line-clamp-2">
 							{val}
 						</p>
 					</div>

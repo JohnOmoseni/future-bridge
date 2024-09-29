@@ -23,7 +23,7 @@ function Hero() {
 				</div>
 
 				<div
-					className="bg-cover bg-no-repeat max-md:h-[300px] size-full max-md:order-1"
+					className="bg-cover bg-no-repeat bg-center max-md:h-[300px] size-full max-md:order-1"
 					style={{ backgroundImage: `url(${newsHero})` }}
 				/>
 			</div>

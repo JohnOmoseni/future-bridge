@@ -57,7 +57,7 @@ function About() {
 							src={img}
 							alt=""
 							className={cn(
-								"size-full rounded-sm max-h-[400px] md:min-w-[400px] max-sm:order-1 max-sm:-mx-2",
+								"size-full max-sm:mx-auto sm:rounded-sm max-h-[400px] md:min-w-[400px] max-sm:order-1 ",
 								idx === 1 && " order-1"
 							)}
 						/>

@@ -25,8 +25,8 @@ function Header2({ setOpenMenu }: HeaderProps) {
 					/>
 				</div>
 
-				<Link to="/" className="max-sm:w-full">
-					<LogoMobile className="block sm:hidden h-fit w-[200px] max-md:mx-auto max-sm:max-w-[260px]" />
+				<Link to="/dashboard" className="max-sm:w-full">
+					<LogoMobile className="block sm:hidden h-fit w-48 max-md:mx-auto max-sm:max-w-[260px]" />
 
 					<Logo className="hidden sm:block h-fit w-fit max-md:mx-auto max-sm:max-w-[260px]" />
 				</Link>

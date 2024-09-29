@@ -57,6 +57,9 @@
 	h3 {
 		@apply text-subtitle font-semibold;
 	}
+	.hero h1 > * {
+		@apply font-semibold font-inter;
+	}
 }
 
 @layer utilities {
