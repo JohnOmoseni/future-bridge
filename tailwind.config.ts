@@ -58,13 +58,14 @@ const config = {
 			},
 			fontFamily: {
 				"dm-sans": ["DM Sans", "Arial", "sans-serif"],
+				inter: ["Inter", "Arial", "sans-serif"],
 			},
 			fontSize: {
 				sm: "0.8rem",
 				base: ["0.86rem", { lineHeight: "1.3" }],
 				subtitle: ["clamp(1.1rem, 3vw, 20px)", { lineHeight: "1.2" }],
-				secondaryFont: ["clamp(2rem, 6vw, 36px) ", { lineHeight: "1.2" }],
-				primaryFont: ["clamp(2.5rem, 6vw, 48px)", { lineHeight: "1.2" }],
+				secondaryFont: ["clamp(1.6rem, 6vw, 36px) ", { lineHeight: "1.2" }],
+				primaryFont: ["clamp(2.2rem, 6vw, 48px)", { lineHeight: "1.2" }],
 			},
 			keyframes: {
 				"accordion-down": {
@@ -93,6 +94,21 @@ const config = {
 
 			addUtilities(newUtilities, ["responsive", "hover"]);
 		},
+	],
+	safelist: [
+		"bg-red-200",
+		"text-red-600",
+		"bg-green-200",
+		"text-green-600",
+		"bg-blue-200",
+		"text-blue-600",
+		"bg-yellow-200",
+		"text-yellow-600",
+		"bg-emerald-200",
+		"text-emerald-600",
+		"bg-pink-200",
+		"text-pink-600",
+		// Add all potential dynamic classes here
 	],
 } satisfies Config;
 

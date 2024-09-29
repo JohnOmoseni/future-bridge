@@ -1,30 +1,25 @@
-import { useState } from "react";
 import { useFormik } from "formik";
 import { InferType } from "yup";
-import { ParentApplicationFormSchema } from "@/schema";
-import { Value } from "react-phone-number-input";
+import { ApplicantFormSchema } from "@/schema";
 import { toast } from "sonner";
-import { useNavigate } from "react-router-dom";
 import CustomFormField, { FormFieldType } from "../CustomFormField";
 import ApplicationFormWrapper from "./ApplicationFormWrapper";
 
-import "react-phone-number-input/style.css";
+export type FormProps = {
+	step?: number;
+	nextStep?: () => void;
+	prevStep?: () => void;
+};
 
-const ApplicantForm = ({ user }: { user?: any }) => {
-	const [isLoading, setIsLoading] = useState(false);
-	const navigate = useNavigate();
-
-	const onSubmit = async (
-		values: InferType<typeof ParentApplicationFormSchema>
-	) => {
-		setIsLoading(true);
+const ApplicantForm = ({ step, nextStep }: FormProps) => {
+	const onSubmit = async (values: InferType<typeof ApplicantFormSchema>) => {
 		console.log("Form submitted", values);
+
+		nextStep && nextStep();
 
 		try {
 		} catch (error) {
 			toast.error("An error occured");
-		} finally {
-			setIsLoading(false);
 		}
 	};
 
@@ -38,101 +33,71 @@ const ApplicantForm = ({ user }: { user?: any }) => {
 		handleSubmit,
 	} = useFormik({
 		initialValues: {
-			fatherName: "",
-			motherName: "",
-			guardianName: "",
-			religion: "",
-			spiritualLeaderName: "",
-			placeOfWorship: "",
-			phoneNumberOfFather: "",
-			phoneNumberOfMother: "",
-			phoneNumberOfGuardian: "",
-			addressOfFather: "",
-			addressOfMother: "",
-			addressOfGuardian: "",
-			addressOfPlaceOfWorship: "",
+			name: "",
+			schoolName: "",
+			sex: "",
+			yearOfGrad: "",
+			dob: "",
+			class: "",
 		},
-		validationSchema: ParentApplicationFormSchema,
+		validationSchema: ApplicantFormSchema,
 		onSubmit,
 	});
 
 	const fields = [
 		[
 			{
-				name: "fatherName",
-				label: "Name of parent (Father)",
-				value: values.fatherName,
-				placeholder: "e.g Mr Tamar Guanah",
+				name: "name",
+				label: "Name of applicant",
+				value: values.name,
+				placeholder: "e.g Tamar Guanah",
+				required: true,
+			},
+
+			{
+				name: "sex",
+				label: "Sex",
+				value: values.sex,
+				placeholder: "e.g Male or female",
 				required: true,
 			},
 			{
-				name: "phoneNumberOfFather",
-				label: "Phone No",
-				value: values.phoneNumberOfFather,
-				placeholder: "",
-				required: true,
-			},
-			{
-				name: "addressOfFather",
-				label: "Address",
-				value: values.addressOfFather,
-				placeholder: "e.g Mile two signal Barracks",
-				required: true,
-			},
-		],
-		[
-			{
-				name: "fatherName",
-				label: "Name of parent (Father)",
-				value: values.fatherName,
-				placeholder: "e.g Mr Tamar Guanah",
-				required: true,
-			},
-			{
-				name: "phoneNumberOfFather",
-				label: "Phone No",
-				value: values.phoneNumberOfFather,
-				placeholder: "",
-				required: true,
-			},
-			{
-				name: "addressOfFather",
-				label: "Address",
-				value: values.addressOfFather,
-				placeholder: "e.g Mile two signal Barracks",
-				required: true,
+				name: "dob",
+				label: "Date of birth",
+				value: values.dob,
+				placeholder: "DD/MM/YYYY",
 			},
 		],
 		[
 			{
-				name: "fatherName",
-				label: "Name of parent (Father)",
-				value: values.fatherName,
-				placeholder: "e.g Mr Tamar Guanah",
+				name: "schoolName",
+				label: "Name of last school attended",
+				value: values.schoolName,
+				placeholder: "e.g Model high secondary school",
 				required: true,
 			},
 			{
-				name: "phoneNumberOfFather",
-				label: "Phone No",
-				value: values.phoneNumberOfFather,
-				placeholder: "",
+				name: "yearOfGrad",
+				label: "Year obtained or will obtain first school leaving certificate",
+				value: values.yearOfGrad,
+				placeholder: "e.g Primary school or junior waec certificate",
 				required: true,
 			},
+
 			{
-				name: "addressOfFather",
-				label: "Address",
-				value: values.addressOfFather,
-				placeholder: "e.g Mile two signal Barracks",
-				required: true,
+				name: "class",
+				label: "Present class",
+				value: values.class,
+				placeholder: "e.g JS. 1",
 			},
 		],
 	];
 
 	return (
 		<ApplicationFormWrapper
-			headerText="Parent/Guardian Information"
-			onSubmit={handleSubmit}
-			isSubmitting={isLoading}
+			headerText="Applicant Information"
+			nextStep={handleSubmit}
+			step={step}
 		>
 			{fields?.map((row) => (
 				<div
@@ -155,16 +120,18 @@ const ApplicantForm = ({ user }: { user?: any }) => {
 					/>
 
 					<CustomFormField
-						fieldType={FormFieldType.PHONE_INPUT}
+						fieldType={FormFieldType.INPUT}
 						name={row[1]?.name}
 						label={row[1]?.label}
-						field={{ value: row[1]?.value }}
-						onChange={(value: Value) => {
-							setFieldValue(row[0]?.name, value);
+						field={{
+							value: row[1]?.value,
+							placeholder: row[1]?.placeholder,
 						}}
+						onChange={handleChange}
 						onBlur={handleBlur}
 						errors={errors}
 						touched={touched}
+						required
 					/>
 
 					<CustomFormField

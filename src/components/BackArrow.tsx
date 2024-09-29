@@ -11,14 +11,14 @@ function BackArrow({
 	const navigate = useNavigate();
 
 	return (
-		<div className="row-flex-start gap-2">
+		<div className="flex-column gap-4">
 			<ArrowLeft
 				onClick={() => (onHandleGoBack ? onHandleGoBack() : navigate(-1))}
 				size={22}
-				className="icon"
+				className="icon cursor-pointer"
 			/>
 
-			{title && <h3 className="text-2xl lg:text-3xl">{title}</h3>}
+			{title && <h3 className="text-2xl leading-7 lg:text-3xl">{title}</h3>}
 		</div>
 	);
 }

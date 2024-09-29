@@ -18,15 +18,13 @@ const MainLayout = () => {
 				{openMenu && <Menu openMenu={openMenu} setOpenMenu={setOpenMenu} />}
 			</AnimatePresence>
 			<div ref={scrollRef} className="wrapper">
-				<div className="wrapper-content">
-					<Header setOpenMenu={setOpenMenu} />
+				<Header setOpenMenu={setOpenMenu} />
 
-					<Suspense fallback={<FallbackLoader />}>
-						<Outlet />
-					</Suspense>
+				<Suspense fallback={<FallbackLoader />}>
+					<Outlet />
+				</Suspense>
 
-					<Footer />
-				</div>
+				<Footer />
 			</div>
 		</>
 	);

@@ -5,7 +5,7 @@ import SectionWrapper from "@/layouts/SectionWrapper";
 
 function ApplicationSuccess() {
 	return (
-		<SectionWrapper containerStyles="!py-12">
+		<SectionWrapper containerStyles="!py-1">
 			<div className="grid place-items-center">
 				<div className="flex-column !items-center gap-6">
 					<h3 className="sm:text-3xl">Congratulations!</h3>
@@ -33,11 +33,7 @@ function ApplicationSuccess() {
 					</div>
 
 					<Link to="/dashboard/" className="">
-						<Button
-							type="submit"
-							title="Back to Home"
-							className="!mt-auto !w-full"
-						/>
+						<Button title="Back to Home" className="!mt-auto !w-full" />
 					</Link>
 				</div>
 			</div>

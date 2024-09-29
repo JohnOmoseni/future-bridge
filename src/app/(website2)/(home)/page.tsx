@@ -18,15 +18,17 @@ function Home() {
 				</p>
 			</div>
 
-			<About />
+			<main>
+				<About />
 
-			<Features />
+				<Features />
 
-			<Gallery />
+				<Gallery />
 
-			<News />
+				<News />
 
-			<Testimonials />
+				<Testimonials />
+			</main>
 		</>
 	);
 }

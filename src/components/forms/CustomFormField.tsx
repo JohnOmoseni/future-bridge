@@ -47,13 +47,9 @@ interface CustomProps {
 }
 
 const RenderInput = ({ props }: { props: CustomProps }) => {
-	const [showPassword, setShowPassword] = useState(false);
+	const [showPassword] = useState(false);
 	const { field, fieldType, name, onBlur, onChange } = props;
 	const placeholder = field?.placeholder ?? "";
-
-	const changePasswordVisibility = () => {
-		setShowPassword((prev) => !prev);
-	};
 
 	switch (fieldType) {
 		case FormFieldType.INPUT:
@@ -69,24 +65,8 @@ const RenderInput = ({ props }: { props: CustomProps }) => {
 						value={field?.value as string}
 						onChange={onChange}
 						onBlur={onBlur}
-						className={cn(
-							"i-reset",
-							field?.type === "password" && "text-[1.2rem]"
-						)}
+						className={cn("i-reset", "!bg-background-100")}
 					/>
-
-					{field?.type === "password" && (
-						<span
-							className="icon absolute right-3 z-10"
-							onClick={changePasswordVisibility}
-						>
-							{/* {showPassword ? (
-                <Eye size={22} className="text-secondary" />
-              ) : (
-                <EyeOff size={22} className="text-secondary" />
-              )} */}
-						</span>
-					)}
 				</>
 			);
 
@@ -99,7 +79,7 @@ const RenderInput = ({ props }: { props: CustomProps }) => {
 					value={field?.value as string}
 					onChange={onChange}
 					onBlur={onBlur}
-					className="resize-none i-reset"
+					className="resize-none i-reset !bg-background-100"
 				/>
 			);
 
@@ -177,7 +157,7 @@ const CustomFormField = (props: CustomProps) => {
 			)}
 		>
 			{label && (
-				<Label className="relative mb-1.5 ml-0.5 inline-flex after:absolute after:-right-6 after:top-0 after:text-sm after:text-red-500 after:content-[*]">
+				<Label className="relative mb-1.5 ml-0.5 leading-4 inline-flex after:absolute after:-right-6 after:top-0 after:text-sm after:text-red-500 after:content-[*]">
 					{label}
 				</Label>
 			)}

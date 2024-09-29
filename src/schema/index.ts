@@ -97,26 +97,10 @@ export const ApplicantFormSchema = yup.object().shape({
 		.min(6, "Name must be at least 6 characters")
 		.max(100, "Name must be at most 100 characters")
 		.required("Field is required"),
-	sex: yup
-		.string()
-		.min(6, "Name must be at least 6 characters")
-		.max(100, "Name must be at most 100 characters")
-		.required("Field is required"),
-	yearOfGrad: yup
-		.string()
-		.min(6, "Name must be at least 6 characters")
-		.max(100, "Name must be at most 100 characters")
-		.required("Field is required"),
-	dob: yup
-		.string()
-		.min(6, "Name must be at least 6 characters")
-		.max(100, "Name must be at most 100 characters")
-		.required("Field is required"),
-	class: yup
-		.string()
-		.min(6, "Name must be at least 6 characters")
-		.max(100, "Name must be at most 100 characters")
-		.required("Field is required"),
+	sex: yup.string().required("Field is required"),
+	yearOfGrad: yup.string().required("Field is required"),
+	dob: yup.string().required("Field is required"),
+	class: yup.string().required("Field is required"),
 });
 
 export const ParentApplicationFormSchema = yup.object().shape({

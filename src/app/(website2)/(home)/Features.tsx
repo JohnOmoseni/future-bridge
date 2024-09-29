@@ -1,26 +1,26 @@
-import { about } from "@/constants/icons2";
+import { about, feature1, feature2, feature3 } from "@/constants/icons2";
 
 function Features() {
 	return (
-		<div className="section bg-[#C3CFE0] flex-column gap-1">
+		<div className="section bg-[#C3CFE0] flex-column gap-2">
 			<span className="text-foreground-variant font-semibold">
 				What we offer!
 			</span>
 
 			<h3>What do we have to show at St. Endas?</h3>
 
-			<div className="mt-12">
-				<div className="flex-column sm:grid grid-cols-[repeat(auto-fit,_minmax(100px,_1fr))] gap-6 lg:grid-rows-[180px_auto_150px] lg:grid-cols-[350px_auto_auto]">
+			<div className="mt-6 md:mt-12">
+				<div className="flex-column max-sm:gap-y-5 sm:grid grid-cols-[repeat(auto-fit,_minmax(100px,_1fr))] gap-6 lg:grid-rows-[180px_auto_150px] lg:grid-cols-[350px_auto_auto]">
 					<img
-						src={about}
+						src={feature1}
 						alt=""
-						className="h-[80%] my-auto row-[1/4] object-cover"
+						className="h-[90%] my-auto row-[1/4] object-cover"
 					/>
 
 					<div className="flex-column self-center col-[3/4] row-[1/2]">
 						<h4 className="font-semibold text-lg">Modern facilities</h4>
 
-						<p className="text-base leading-5 pr-2 mt-3">
+						<p className="text-base leading-5 pr-2 mt-2">
 							St Endas boasts of state-of-the-art teaching and learning
 							equipment across all classrooms and laboratories. Our science labs
 							boasts of the latest equipment, enabling hands on exploration and
@@ -29,7 +29,7 @@ function Features() {
 					</div>
 
 					<img
-						src={about}
+						src={feature2}
 						alt=""
 						className="sm:max-md:hidden row-[1/3] h-full object-cover"
 					/>
@@ -46,7 +46,7 @@ function Features() {
 					</div>
 
 					<img
-						src={about}
+						src={feature3}
 						alt=""
 						className="col-[2/3] h-full row-[3/4] lg:w-[70%] object-cover"
 					/>

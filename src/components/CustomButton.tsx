@@ -25,8 +25,6 @@ export const Button = ({
 	isLoading,
 	disabled,
 }: BtnProps) => {
-	console.log(isLoading, disabled);
-
 	return (
 		<button
 			type={type || "button"}

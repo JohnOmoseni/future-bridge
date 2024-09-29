@@ -24,12 +24,16 @@ function About() {
 				</p>
 
 				<Link to="#" className="text-foreground-variant font-medium text-sm">
-					Read more
+					Read more &gt;&gt;&gt;
 				</Link>
 			</div>
 
-			<div className="max-w-xl min-w-[300px]">
-				<img src={about} alt="" className="h-full !object-contain" />
+			<div className="max-w-xl mx-auto rounded-2xl sm:rounded-xl overflow-hidden">
+				<img
+					src={about}
+					alt=""
+					className="h-full !object-contain max-sm:max-h-[300px]"
+				/>
 			</div>
 		</div>
 	);

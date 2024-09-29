@@ -1,21 +1,21 @@
 import { useState } from "react";
 import { useFormik } from "formik";
-import { InferType } from "yup";
-import { ParentApplicationFormSchema } from "@/schema";
 import { toast } from "sonner";
-import { useNavigate } from "react-router-dom";
+import { FormProps } from "./ApplicantForm";
+import FileUpload from "./FileUpload";
 import CustomFormField, { FormFieldType } from "../CustomFormField";
 import ApplicationFormWrapper from "./ApplicationFormWrapper";
 
 import "react-phone-number-input/style.css";
-import FileUpload from "./FileUpload";
 
-const DocumentForm = ({ user }: { user?: any }) => {
+const DocumentForm = ({ step, nextStep, prevStep }: FormProps) => {
 	const [isLoading, setIsLoading] = useState(false);
-	const navigate = useNavigate();
 
 	const onSubmit = async (values: any) => {
 		setIsLoading(true);
+		console.log("Form submitted", values);
+
+		nextStep && nextStep();
 
 		try {
 		} catch (error) {
@@ -25,7 +25,7 @@ const DocumentForm = ({ user }: { user?: any }) => {
 		}
 	};
 
-	const { values, errors, touched, setFieldValue, handleBlur, handleSubmit } =
+	const { errors, touched, setFieldValue, handleBlur, handleSubmit } =
 		useFormik({
 			initialValues: {},
 			validationSchema: null,
@@ -37,22 +37,21 @@ const DocumentForm = ({ user }: { user?: any }) => {
 			headerText="Document Upload"
 			onSubmit={handleSubmit}
 			isSubmitting={isLoading}
+			prevStep={prevStep}
+			step={step}
 		>
-			<div
-				className="sm:row-flex-start flex-column w-full gap-x-3 
-			gap-y-4"
-			>
+			<div className="flex-column sm:grid grid-cols-2 w-full gap-4">
 				<CustomFormField
 					fieldType={FormFieldType.SKELETON}
 					name="passport_upload"
-					label="Upload Passport"
 					errors={errors}
 					onBlur={handleBlur}
 					touched={touched}
 					renderSkeleton={() => (
 						<FileUpload
-							title="Upload Photo"
+							title="Upload Passport"
 							name="passport_upload"
+							required
 							onFileChange={(file) => {
 								setFieldValue("identificationDocument", file);
 							}}
@@ -63,14 +62,14 @@ const DocumentForm = ({ user }: { user?: any }) => {
 				<CustomFormField
 					fieldType={FormFieldType.SKELETON}
 					name="payment_receipt_upload"
-					label="Upload Proof of Payment"
 					errors={errors}
 					onBlur={handleBlur}
 					touched={touched}
 					renderSkeleton={() => (
 						<FileUpload
-							title="Upload Photo"
+							title="Upload Proof of Payment"
 							name="payment_receipt_upload"
+							required
 							onFileChange={(file) => {
 								setFieldValue("payment_receipt_upload", file);
 							}}
@@ -79,44 +78,38 @@ const DocumentForm = ({ user }: { user?: any }) => {
 				/>
 			</div>
 
-			<div
-				className="sm:row-flex-start flex-column w-full gap-x-3 
-			gap-y-4"
-			>
-				<CustomFormField
-					fieldType={FormFieldType.SKELETON}
-					name="certificate_upload"
-					label="Upload Testimonial or First school leaving certificate (if available)"
-					errors={errors}
-					renderSkeleton={() => (
-						<FileUpload
-							title="Upload Photo"
-							name="certificate_upload"
-							onFileChange={(file) => {
-								setFieldValue("certificate_upload", file);
-							}}
-						/>
-					)}
-				/>
+			<CustomFormField
+				fieldType={FormFieldType.SKELETON}
+				name="certificate_upload"
+				errors={errors}
+				renderSkeleton={() => (
+					<FileUpload
+						title="Upload Testimonial or First school leaving certificate (if available)"
+						name="certificate_upload"
+						required
+						onFileChange={(file) => {
+							setFieldValue("certificate_upload", file);
+						}}
+					/>
+				)}
+			/>
 
-				<CustomFormField
-					fieldType={FormFieldType.SKELETON}
-					name="birth_certificate_upload"
-					label="Upload Birth Certificate"
-					errors={errors}
-					onBlur={handleBlur}
-					touched={touched}
-					renderSkeleton={() => (
-						<FileUpload
-							title="Upload Photo"
-							name="birth_certificate_upload"
-							onFileChange={(file) => {
-								setFieldValue("birth_certificate_upload", file);
-							}}
-						/>
-					)}
-				/>
-			</div>
+			<CustomFormField
+				fieldType={FormFieldType.SKELETON}
+				name="birth_certificate_upload"
+				errors={errors}
+				onBlur={handleBlur}
+				touched={touched}
+				renderSkeleton={() => (
+					<FileUpload
+						title="Upload Birth Certificate"
+						name="birth_certificate_upload"
+						onFileChange={(file) => {
+							setFieldValue("birth_certificate_upload", file);
+						}}
+					/>
+				)}
+			/>
 		</ApplicationFormWrapper>
 	);
 };

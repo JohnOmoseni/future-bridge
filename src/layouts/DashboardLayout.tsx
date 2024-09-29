@@ -1,7 +1,7 @@
 import { Suspense, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Outlet } from "react-router-dom";
-import Menu from "@/layouts/Menu";
+import Menu from "@/layouts/DashboardMenu";
 import Footer from "@/layouts/Footer";
 import FallbackLoader from "@/components/fallback/FallbackLoader";
 import ScrollToTop from "@/components/ScrollToTop";

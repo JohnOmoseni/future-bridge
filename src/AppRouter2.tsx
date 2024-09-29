@@ -2,8 +2,8 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./app/(website2)/(home)/page";
 import Contact from "./app/(website2)/contact/page";
 import About from "./app/(website2)/about/page";
-import ApplicationSuccess from "./app/(website2)/application/success";
-import ApplicationPage from "./app/(website2)/application/page";
+import AdmissionSuccess from "./app/(website2)/admission/success";
+import AdmissionPage from "./app/(website2)/admission/page";
 import Calendar from "./app/(website2)/calendar/page";
 import Gallery from "./app/(website2)/gallery/page";
 import News from "./app/(website2)/news/page";
@@ -27,9 +27,9 @@ const AppRouter2 = () => {
 					<Route path="welcome" element={<WelcomeNote />} />
 				</Route>
 
-				<Route path="application">
-					<Route index element={<ApplicationPage />} />
-					<Route path="success" element={<ApplicationSuccess />} />
+				<Route path="admission">
+					<Route index element={<AdmissionPage />} />
+					<Route path="success" element={<AdmissionSuccess />} />
 				</Route>
 			</Route>
 		</Routes>

@@ -1,6 +1,6 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Envelope as UploadIcon } from "@/constants/icons";
+import { Upload as UploadIcon } from "@/constants/icons2";
 import { cn } from "@/lib/utils";
 import { ChangeEvent, useEffect, useState } from "react";
 import { toast } from "sonner";
@@ -11,6 +11,7 @@ type Props = {
 	accept?: string;
 	type?: string;
 	sizeLimit?: number;
+	required?: boolean;
 	fileObject?: File | null;
 	onFileChange?: (file: File | null) => void; // Callback when file is selected
 };
@@ -21,6 +22,7 @@ function FileUpload({
 	accept = "image/*",
 	type = "image",
 	sizeLimit,
+	required,
 	onFileChange,
 }: Props) {
 	const [file, setFile] = useState<File | null>(null);
@@ -71,14 +73,18 @@ function FileUpload({
 		<div className="my-2 w-full">
 			<div className="w-full">
 				<div className="flex-column gap-2">
-					<Label className="text-base w-max relative font-medium after:absolute after:content-['*'] after:-right-2 after:text-red-500 after:-top-1 after:text-lg">
+					<Label
+						className={cn(
+							"text-base w-max relative font-medium after:absolute after:-right-2 after:text-red-500 after:-top-1 after:text-lg",
+							required && "after:content-['*']"
+						)}
+					>
 						{title}
 					</Label>
 
 					<div
 						className={cn(
-							"w-full flex-column items-center justify-center gap-2 border border-border min-h-[100px] rounded-md overflow-hidden border-dashed",
-							type !== "image" && "py-4 px-3"
+							"w-full flex-column items-center bg-background-300 p-1 justify-center gap-2 border border-border h-32 md:h-40 rounded-md overflow-hidden border-dashed"
 						)}
 					>
 						<Input
@@ -88,42 +94,23 @@ function FileUpload({
 							onChange={(event) => handleFileChange(event)}
 							className="hidden"
 						/>
-						<Label htmlFor={name} className=" ">
+						<Label htmlFor={name} className="w-full">
 							{file ? (
-								type === "image" ? (
-									<div className="h-40">
-										<img
-											src={URL.createObjectURL(file)}
-											alt={file.name}
-											className="object-cover w-full h-full rounded-md"
-										/>
-									</div>
-								) : (
-									<div className="mt-2">
-										<p className="text-sm text-center font-semibold">{`File Name: ${file.name}`}</p>
-										<p className="text-sm text-center">{`File Size: ${(
-											file.size /
-											1024 /
-											1024
-										).toFixed(2)} MB`}</p>
-										<p className="text-sm text-center">{`Upload Date: ${new Date(
-											file.lastModified
-										).toLocaleDateString()}`}</p>
-										<p className="text-sm text-center">{`Upload Time: ${new Date(
-											file.lastModified
-										).toLocaleTimeString()}`}</p>
-									</div>
-								)
+								<div className="h-40">
+									<img
+										src={URL.createObjectURL(file)}
+										alt={file.name}
+										className="object-contain w-full h-full rounded-md"
+									/>
+								</div>
 							) : (
-								<div className="flex-column items-center">
-									<div className="row-flex-start gap-2">
-										<UploadIcon size={20} className="" />
+								<div className="flex-column !items-center gap-2  p-4 ">
+									<UploadIcon className="size-6" />
 
-										<span className="text-sm text-grey capitalize">
-											{isUploading ? "Uploading..." : `Upload ${type}`}
-										</span>
-									</div>
-									<p className="text-sm text-grey uppercase">
+									<span className="text-base capitalize">
+										{isUploading ? "Uploading..." : `Upload ${type}`}
+									</span>
+									<p className="text-sm text-center text-grey lowercase">
 										Accepted formats: {acceptLabel} etc.
 									</p>
 								</div>
