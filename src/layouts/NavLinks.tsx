@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function NavLinks({ label, href, openMenu, setOpenMenu, idx }: NavLinkProps) {
 	const { pathname } = useLocation();
-	const isActive = pathname === href;
+	const isActive = pathname === href || pathname === `${href}/`;
 
 	const handleClick = () => {
 		if (openMenu && setOpenMenu) setOpenMenu(false);

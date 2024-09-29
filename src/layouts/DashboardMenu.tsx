@@ -47,10 +47,6 @@ function Menu({ openMenu, setOpenMenu }: MenuProps) {
 						<Button
 							title="Get Started"
 							className="!min-w-[100px] rounded-lg px-5"
-							onClick={() => {
-								if (openMenu && setOpenMenu) setOpenMenu(false);
-								navigate("/get-started");
-							}}
 						/>
 					</Link>
 				</div>
