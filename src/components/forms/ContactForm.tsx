@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useFormik } from "formik";
 import { InferType } from "yup";
 import { ContactSchema } from "@/schema";
@@ -12,8 +11,6 @@ import CustomFormField, { FormFieldType } from "./CustomFormField";
 import { ContactUsType } from "@/types/server";
 
 const ContactForm = () => {
-	const [isLoading, setIsLoading] = useState(false);
-
 	const contactMutation = useMutation({
 		mutationFn: (data: ContactUsType) => publicApi.postContactUs(data),
 		onError: (error) => {
@@ -31,8 +28,6 @@ const ContactForm = () => {
 	});
 
 	const onSubmit = async (values: InferType<typeof ContactSchema>) => {
-		setIsLoading(true);
-		console.log("Form submitted", values);
 		try {
 			const data = {
 				email: values.email,
@@ -44,8 +39,6 @@ const ContactForm = () => {
 			contactMutation.mutate(data);
 		} catch (error) {
 			toast.error("An issue was encountered sending message. Please try again");
-		} finally {
-			setIsLoading(false);
 		}
 	};
 
@@ -67,7 +60,7 @@ const ContactForm = () => {
 			icon={Support}
 			headerText="Send a message and we’ll respond within 24 hours"
 			onSubmit={handleSubmit}
-			isSubmitting={isLoading}
+			isSubmitting={contactMutation.isPending}
 		>
 			<CustomFormField
 				fieldType={FormFieldType.INPUT}

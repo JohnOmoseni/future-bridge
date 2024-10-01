@@ -10,7 +10,13 @@ function App() {
 	return (
 		<QueryProvider>
 			<MainRouter />
-			<Toaster richColors />
+			<Toaster
+				richColors
+				toastOptions={{
+					style: { padding: "1rem" },
+					className: "my-toast",
+				}}
+			/>{" "}
 		</QueryProvider>
 	);
 }

@@ -14,3 +14,10 @@ export type NavLinkProps = {
 	openMenu?: boolean;
 	setOpenMenu?: Dispatch<SetStateAction<boolean>>;
 };
+
+export type FormProps = {
+	step?: number;
+	requestId?: string;
+	nextStep?: () => void;
+	prevStep?: () => void;
+};

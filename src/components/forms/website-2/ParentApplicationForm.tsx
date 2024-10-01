@@ -1,23 +1,53 @@
+import React from "react";
 import { useFormik } from "formik";
 import { InferType } from "yup";
 import { ParentApplicationFormSchema } from "@/schema";
 import { Value } from "react-phone-number-input";
 import { toast } from "sonner";
-import { FormProps } from "./ApplicantForm";
+import { useMutation } from "@tanstack/react-query";
+import { publicApiWebsite2 } from "@/server/req/requestApis";
+import { ApplicantParentFormParams } from "@/types/server";
 import CustomFormField, { FormFieldType } from "../CustomFormField";
 
+import { FormProps } from "@/types";
+import { REQUEST_ID_ERROR } from "@/constants/dashboard-index";
 import ApplicationFormWrapper from "./ApplicationFormWrapper";
 import "react-phone-number-input/style.css";
 
-const ParentForm = ({ step, nextStep, prevStep }: FormProps) => {
+const ParentForm = ({ step, requestId, nextStep, prevStep }: FormProps) => {
+	const applicantParentFormMutation = useMutation({
+		mutationFn: (data: ApplicantParentFormParams) =>
+			publicApiWebsite2.postNewAdmission(data),
+		onError: (error) => {
+			console.error("[Applicant Parent Form]", error);
+			toast.error("Something went wrong");
+		},
+		onSuccess: (data: any) => {
+			const { status } = data || {};
+			if (!status) toast.warning(`${data?.message}`);
+			if (status)
+				toast.success(`${data?.message || "Form submitted successfully"}`);
+		},
+	});
+
 	const onSubmit = async (
 		values: InferType<typeof ParentApplicationFormSchema>
 	) => {
-		console.log("Form submitted", values);
+		if (!requestId) {
+			toast.error(REQUEST_ID_ERROR);
+			return;
+		}
 
-		nextStep && nextStep();
+		const data = {
+			...values,
+			page: step?.toString()!,
+			request_id: requestId,
+		};
+		console.log("Form submitted", values, data);
 
 		try {
+			await applicantParentFormMutation.mutateAsync(data);
+			nextStep && nextStep();
 		} catch (error) {
 			toast.error("An error occured");
 		}
@@ -33,22 +63,23 @@ const ParentForm = ({ step, nextStep, prevStep }: FormProps) => {
 		handleSubmit,
 	} = useFormik({
 		initialValues: {
-			fatherName: "",
-			motherName: "",
-			guardianName: "",
+			applicant_father_name: "",
+			applicant_mother_name: "",
+			other_guardian_name: "",
 
-			phoneNumberOfFather: "",
-			phoneNumberOfMother: "",
-			phoneNumberOfGuardian: "",
+			applicant_father_phone: "",
+			applicant_mother_phone: "",
+			other_guardian_phone: "",
 
-			addressOfFather: "",
-			addressOfMother: "",
-			addressOfGuardian: "",
-			addressOfPlaceOfWorship: "",
+			applicant_father_address: "",
+			applicant_mother_address: "",
+			other_guardian_address: "",
 
-			religion: "",
-			spiritualLeaderName: "",
-			placeOfWorship: "",
+			parent_religion: "",
+			parent_denomination: "",
+
+			worship_address: "",
+			religious_figure_name: "",
 		},
 		validationSchema: ParentApplicationFormSchema,
 		onSubmit,
@@ -56,108 +87,108 @@ const ParentForm = ({ step, nextStep, prevStep }: FormProps) => {
 
 	const fields = [
 		{
-			name: "fatherName",
+			name: "applicant_father_name",
 			label: "Name of parent (Father)",
-			value: values.fatherName,
+			value: values.applicant_father_name,
 			placeholder: "e.g Mr Tamar Guanah",
 			required: true,
 			type: FormFieldType.INPUT,
 		},
 		{
-			name: "phoneNumberOfFather",
+			name: "applicant_father_phone",
 			label: "Phone No",
-			value: values.phoneNumberOfFather,
+			value: values.applicant_father_phone,
 			placeholder: "",
 			required: true,
 			type: FormFieldType.PHONE_INPUT,
 		},
 		{
-			name: "addressOfFather",
+			name: "applicant_father_address",
 			label: "Address",
-			value: values.addressOfFather,
+			value: values.applicant_father_address,
 			placeholder: "e.g Mile two signal Barracks",
 			required: true,
 			type: FormFieldType.INPUT,
 		},
 
 		{
-			name: "motherName",
+			name: "applicant_mother_name",
 			label: "Name of parent (Mother)",
-			value: values.motherName,
+			value: values.applicant_mother_name,
 			placeholder: "e.g Mrs Tamar Guanah",
 			required: true,
 			type: FormFieldType.INPUT,
 		},
 		{
-			name: "phoneNumberOfMother",
+			name: "applicant_mother_phone",
 			label: "Phone No",
-			value: values.phoneNumberOfMother,
+			value: values.applicant_mother_phone,
 			placeholder: "",
 			required: true,
 			type: FormFieldType.PHONE_INPUT,
 		},
 		{
-			name: "addressOfFMother",
+			name: "applicant_mother_address",
 			label: "Address",
-			value: values.addressOfMother,
+			value: values.applicant_mother_address,
 			placeholder: "e.g Mile two signal Barracks",
 			required: true,
 			type: FormFieldType.INPUT,
 		},
 
 		{
-			name: "guardianName",
+			name: "other_guardian_name",
 			label: "Name of guardian (if other than parent)",
-			value: values.guardianName,
+			value: values.other_guardian_name,
 			placeholder: "e.g Mr Tamar Guanah",
 			required: true,
 			type: FormFieldType.INPUT,
 		},
 		{
-			name: "phoneNumberOfGuardian",
+			name: "other_guardian_phone",
 			label: "Phone No",
-			value: values.phoneNumberOfGuardian,
+			value: values.other_guardian_phone,
 			placeholder: "",
 			required: true,
 			type: FormFieldType.PHONE_INPUT,
 		},
 		{
-			name: "addressOfGuardian",
+			name: "other_guardian_address",
 			label: "Address",
-			value: values.addressOfGuardian,
+			value: values.other_guardian_address,
 			placeholder: "e.g Mile two signal Barracks",
 			required: true,
 			type: FormFieldType.INPUT,
 		},
 
 		{
-			name: "religion",
+			name: "parent_religion",
 			label: "Religion of parent",
-			value: values.religion,
+			value: values.parent_religion,
 			placeholder: "e.g Christian/Muslim",
 			required: true,
 			type: FormFieldType.INPUT,
 		},
 		{
-			name: "placeOfWorship",
+			name: "parent_denomination",
 			label: "Denomination",
-			value: values.placeOfWorship,
+			value: values.parent_denomination,
 			placeholder: "e.g Pentecostal/Catholic",
 			required: true,
 			type: FormFieldType.INPUT,
 		},
 		{
-			name: "addressOfPlaceOfWorship",
+			name: "worship_address",
 			label: "Present Parish/Mosque",
-			value: values.addressOfPlaceOfWorship,
+			value: values.worship_address,
 			placeholder: "e.g Mile two signal Barracks",
 			required: true,
 			type: FormFieldType.INPUT,
 		},
 		{
-			name: "spiritualLeaderName",
+			name: "religious_figure_name",
 			label: "Name of Priest or Imam",
-			value: values.spiritualLeaderName,
+			value: values.religious_figure_name,
 			placeholder: "e.g Father/Imam Tamar Guanah",
 			required: true,
 			type: FormFieldType.INPUT,
@@ -167,13 +198,15 @@ const ParentForm = ({ step, nextStep, prevStep }: FormProps) => {
 	return (
 		<ApplicationFormWrapper
 			headerText="Parent/Guardian Information"
-			nextStep={handleSubmit}
-			prevStep={prevStep}
 			step={step}
+			prevStep={prevStep}
+			onSubmit={handleSubmit}
+			isSubmitting={applicantParentFormMutation.isPending}
 		>
 			<div className="flex-column sm:grid grid-cols-2 md:grid-cols-3 w-full gap-4 max-sm:gap-y-2">
-				{fields?.map((row) => (
-					<>
+				{fields?.map((row, index) => (
+					<React.Fragment key={index}>
+						{" "}
 						{row.type === FormFieldType.INPUT && (
 							<CustomFormField
 								fieldType={FormFieldType.INPUT}
@@ -190,7 +223,6 @@ const ParentForm = ({ step, nextStep, prevStep }: FormProps) => {
 								required
 							/>
 						)}
-
 						{row.type === FormFieldType.PHONE_INPUT && (
 							<CustomFormField
 								fieldType={FormFieldType.PHONE_INPUT}
@@ -205,7 +237,7 @@ const ParentForm = ({ step, nextStep, prevStep }: FormProps) => {
 								touched={touched}
 							/>
 						)}
-					</>
+					</React.Fragment>
 				))}
 			</div>
 		</ApplicationFormWrapper>

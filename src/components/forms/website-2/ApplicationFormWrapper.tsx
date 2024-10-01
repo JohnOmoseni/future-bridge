@@ -1,10 +1,11 @@
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/CustomButton";
-import { FormProps } from "./ApplicantForm";
 import { ArrowLeft, ArrowRight } from "@/constants/icons";
+import ClipLoader from "react-spinners/ClipLoader";
+import { FormProps } from "@/types";
 
-interface FormWrapperProps extends Omit<FormProps, "user"> {
+interface FormWrapperProps extends Omit<FormProps, "user" | "nextStep"> {
 	children: ReactNode;
 	headerText: string;
 	isSubmitting?: boolean;
@@ -21,7 +22,6 @@ function ApplicationFormWrapper({
 	headerText,
 	onSubmit,
 	prevStep,
-	nextStep,
 	step,
 }: FormWrapperProps) {
 	return (
@@ -71,16 +71,32 @@ function ApplicationFormWrapper({
 									step === 2 && "!hidden min-[600px]:!flex"
 								)}
 								disabled={isSubmitting}
-								onClick={() => nextStep && nextStep()}
+								isLoading={isSubmitting}
+								onClick={() => onSubmit && onSubmit()}
 							/>
 
-							<ArrowRight
-								onClick={() => nextStep && nextStep()}
-								className={cn(
-									"hidden",
-									step === 2 && "max-[600px]:block size-4"
+							<>
+								{isSubmitting && step === 2 ? (
+									<ClipLoader
+										color={"#fff"}
+										loading={isSubmitting}
+										size={20}
+										aria-label="Loading"
+										data-testid="loader"
+										className={cn(
+											"!border-secondary !border-b-transparent max-[600px]:!flex size-4 !hidden"
+										)}
+									/>
+								) : (
+									<ArrowRight
+										onClick={() => onSubmit && onSubmit()}
+										className={cn(
+											"hidden",
+											step === 2 && "max-[600px]:block size-4"
+										)}
+									/>
 								)}
-							/>
+							</>
 						</>
 					)}
 				</div>
@@ -99,6 +115,7 @@ function ApplicationFormWrapper({
 						className={cn("!mt-auto mx-auto !py-6 !w-[80%]", btnStyles)}
 						disabled={isSubmitting}
 						isLoading={isSubmitting}
+						onClick={() => onSubmit && onSubmit()}
 					/>
 				)}
 			</form>

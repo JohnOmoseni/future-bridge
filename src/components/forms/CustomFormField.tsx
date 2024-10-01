@@ -85,19 +85,20 @@ const RenderInput = ({ props }: { props: CustomProps }) => {
 
 		case FormFieldType.SELECT:
 			return (
-				<div>
-					<Select
-						onValueChange={onChange}
-						defaultValue={field?.value as string}
-					>
-						<SelectTrigger className="shad-select-trigger">
-							<SelectValue placeholder={placeholder || "Select"} />
-						</SelectTrigger>
-						<SelectContent className="shad-select-content">
-							{props.children}
-						</SelectContent>
-					</Select>
-				</div>
+				<Select onValueChange={onChange} defaultValue={field?.value as string}>
+					<SelectTrigger className="shad-select-trigger">
+						<SelectValue
+							placeholder={
+								<span className="text-placeholder">
+									{placeholder || "Select"}
+								</span>
+							}
+						/>
+					</SelectTrigger>
+					<SelectContent className="shad-select-content">
+						{props.children}
+					</SelectContent>
+				</Select>
 			);
 
 		case FormFieldType.PHONE_INPUT:
@@ -125,7 +126,6 @@ const CustomFormField = (props: CustomProps) => {
 	const {
 		name,
 		label,
-		field,
 		errors,
 		touched,
 		fieldType,
@@ -163,16 +163,14 @@ const CustomFormField = (props: CustomProps) => {
 			)}
 			{result}
 
-			{field?.type !== "password" && (
-				<p
-					className={cn(
-						"transition-sm invisible my-1.5 ml-0.5 line-clamp-2 h-0 text-xs font-semibold leading-4 text-red-500 group-[.is-error]:visible group-[.is-error]:h-auto group-[.is-error]:animate-in",
-						isShowPasswordError && "md:min-h-5"
-					)}
-				>
-					{errors?.[name] as string}
-				</p>
-			)}
+			<p
+				className={cn(
+					"transition-sm invisible my-1.5 ml-0.5 line-clamp-2 h-0 text-xs font-semibold leading-4 text-red-500 group-[.is-error]:visible group-[.is-error]:h-auto group-[.is-error]:animate-in",
+					isShowPasswordError && "md:min-h-5"
+				)}
+			>
+				{errors?.[name] as string}
+			</p>
 		</div>
 	);
 };

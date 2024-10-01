@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import ApplicantForm from "@/components/forms/website-2/ApplicantForm";
 import SectionWrapper from "@/layouts/SectionWrapper";
 import MultiStepForm from "../_components/MultistepIndicator";
@@ -7,6 +8,8 @@ import DocumentForm from "@/components/forms/website-2/DocumentForm";
 import ApplicationSuccess from "./success";
 
 function ApplicationPage() {
+	const { state } = useLocation();
+	const [requestId] = useState(state);
 	const [step, setStep] = useState(1);
 
 	const nextStep = () => {
@@ -17,23 +20,34 @@ function ApplicationPage() {
 		setStep((prev) => Math.max(1, prev - 1));
 	};
 
-	console.log("[STEP]", step);
-
 	return (
 		<SectionWrapper>
-			<div>
-				<MultiStepForm step={step} />
-			</div>
+			<MultiStepForm step={step} />
 
 			<div className="">
 				{step === 1 && (
-					<ApplicantForm step={step} nextStep={nextStep} prevStep={prevStep} />
+					<ApplicantForm
+						requestId={requestId}
+						step={step}
+						nextStep={nextStep}
+						prevStep={prevStep}
+					/>
 				)}
 				{step === 2 && (
-					<ParentForm step={step} nextStep={nextStep} prevStep={prevStep} />
+					<ParentForm
+						step={step}
+						requestId={requestId}
+						nextStep={nextStep}
+						prevStep={prevStep}
+					/>
 				)}
 				{step === 3 && (
-					<DocumentForm step={step} nextStep={nextStep} prevStep={prevStep} />
+					<DocumentForm
+						step={step}
+						requestId={requestId}
+						nextStep={nextStep}
+						prevStep={prevStep}
+					/>
 				)}
 				{step === 4 && <ApplicationSuccess />}
 			</div>

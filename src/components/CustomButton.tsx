@@ -28,7 +28,7 @@ export const Button = ({
 	return (
 		<button
 			type={type || "button"}
-			disabled={disabled}
+			disabled={isLoading}
 			onClick={onClick}
 			className={cn(
 				"btn-variant",
@@ -44,7 +44,7 @@ export const Button = ({
 					size={20}
 					aria-label="Loading"
 					data-testid="loader"
-					className="row-flex text-secondary"
+					className="row-flex"
 				/>
 			) : (
 				<>

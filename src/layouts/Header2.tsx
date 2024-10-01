@@ -4,6 +4,7 @@ import { Button } from "@/components/CustomButton";
 import { Dispatch, SetStateAction } from "react";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
+import { useGetRequestId } from "@/hooks/useGetRequestId";
 import { navLinks } from "@/constants/dashboard-index";
 import NavLinks from "./NavLinks";
 
@@ -12,6 +13,8 @@ type HeaderProps = {
 };
 
 function Header2({ setOpenMenu }: HeaderProps) {
+	const { handleClick, isLoading } = useGetRequestId();
+
 	return (
 		<div className="relative z-10 flex min-h-[70px] w-full px-3 py-1 shadow-sm">
 			<div className="row-flex-btwn mx-auto gap-4 sm:w-[96%] w-full">
@@ -37,12 +40,14 @@ function Header2({ setOpenMenu }: HeaderProps) {
 					))}
 				</div>
 
-				<Link to="/dashboard/admission" className={cn("sm:row-flex hidden")}>
+				<div className={cn("sm:row-flex hidden")}>
 					<Button
 						title="Portal"
+						onClick={handleClick}
+						isLoading={isLoading}
 						className="!min-w-[180px] rounded-lg px-5 sm:px-7"
 					/>
-				</Link>
+				</div>
 			</div>
 		</div>
 	);

@@ -6,7 +6,7 @@ import SectionWrapper from "@/layouts/SectionWrapper";
 function ApplicationSuccess() {
 	return (
 		<SectionWrapper containerStyles="!py-1">
-			<div className="grid place-items-center">
+			<div className="grid place-items-center mt-10">
 				<div className="flex-column !items-center gap-6">
 					<h3 className="text-2xl sm:text-3xl">Congratulations!</h3>
 

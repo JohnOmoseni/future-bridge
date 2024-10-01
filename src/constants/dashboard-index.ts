@@ -9,6 +9,8 @@ import {
 	review3,
 } from "./icons2";
 
+export const REQUEST_ID_ERROR = "RequestID is required";
+
 export const navLinks = [
 	{
 		label: "Home",

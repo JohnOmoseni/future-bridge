@@ -7,9 +7,11 @@ import {
 	HeroBubble,
 	herotextBubble,
 } from "@/constants/icons2";
-import { Link } from "react-router-dom";
+import { useGetRequestId } from "@/hooks/useGetRequestId";
 
 function Hero() {
+	const { handleClick, isLoading } = useGetRequestId();
+
 	return (
 		<div className="hero relative min-h-dvh w-full pb-8 pt-14 sm:min-h-[118dvh] lg:pt-[4%]">
 			<div className="size-full flex-column gap-8 sm:row-flex !items-start">
@@ -17,11 +19,11 @@ function Hero() {
 					<h1 className="relative max-sm:text-center">
 						<span className="relative isolate text-white">
 							Sha
-							<HeroBubble className="object-contain -z-10 absolute -left-4 -top-1  max-sm:-top-4" />
+							<HeroBubble className="object-contain -z-10 absolute -left-4 -top-1.5  max-sm:-top-4" />
 							<img
 								src={herotextBubble}
 								alt="hero"
-								className="object-contain -z-50 absolute left-1 -top-1 max-sm:hidden"
+								className="object-contain -z-20 absolute left-0 -top-2 max-sm:hidden"
 							/>
 						</span>
 						ping the{" "}
@@ -35,12 +37,14 @@ function Hero() {
 						words="Our commitment to academic excellence, and moral integrity ensures that every student is not only prepared for success but also empowered to make a positive impact on the world."
 					/>
 
-					<Link
-						to="/dashboard/admission"
-						className="mt-10 row-flex mx-auto sm:!justify-start"
-					>
-						<Button title="Register now" className="px-10 !py-6 text-lg" />
-					</Link>
+					<div className="mt-10 row-flex mx-auto sm:!justify-start">
+						<Button
+							onClick={handleClick}
+							isLoading={isLoading}
+							title="Register now"
+							className="px-10 !py-6 text-lg"
+						/>
+					</div>
 				</div>
 
 				<div className="sm:absolute overflow-hidden min-h-[350px] max-sm:max-h-[600px] max-sm:px-4 mx-auto bottom-4 right-[4%] -z-10 sm:h-[420px] min-[950px]:h-[470px] xl:min-h-[600px]">
