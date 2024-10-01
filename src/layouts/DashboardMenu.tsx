@@ -3,13 +3,11 @@ import { Close } from "@/constants/icons";
 import { animateFn, revealMenu, slideinVariant } from "@/lib/animate";
 import { MenuProps } from "@/types";
 import { Button } from "../components/CustomButton";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import NavLinks from "./NavLinks";
 import { navLinks } from "@/constants/dashboard-index";
 
 function Menu({ openMenu, setOpenMenu }: MenuProps) {
-	const navigate = useNavigate();
-
 	return (
 		<motion.div
 			style={{ zIndex: 9999 }}
