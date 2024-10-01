@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
 export function useGetRequestId(): any {
-	const { data, isLoading, isError, refetch } = useQuery({
+	const { data, isLoading, isError, isSuccess, refetch } = useQuery({
 		queryKey: ["getRequestId"],
 		queryFn: () => publicApiWebsite2.getRequestId(),
 		enabled: false,
@@ -15,9 +15,9 @@ export function useGetRequestId(): any {
 
 	useEffect(() => {
 		if (isError) toast.error("Error!", { description: "Something went wrong" });
-		// else if (isSuccess && data?.request_id)
-		// 	navigate("/dashboard/admission", { state: data?.request_id });
-	}, [isError]);
+		else if (isSuccess && data?.request_id)
+			navigate("/dashboard/admission", { state: data?.request_id });
+	}, [isError, isSuccess, data, navigate]);
 
 	const handleClick = () => {
 		const storedRequestId = localStorage.getItem("REQUEST_ID");

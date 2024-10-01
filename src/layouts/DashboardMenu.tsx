@@ -3,11 +3,13 @@ import { Close } from "@/constants/icons";
 import { animateFn, revealMenu, slideinVariant } from "@/lib/animate";
 import { MenuProps } from "@/types";
 import { Button } from "../components/CustomButton";
-import { Link } from "react-router-dom";
-import NavLinks from "./NavLinks";
 import { navLinks } from "@/constants/dashboard-index";
+import { useGetRequestId } from "@/hooks/useGetRequestId";
+import NavLinks from "./NavLinks";
 
 function Menu({ openMenu, setOpenMenu }: MenuProps) {
+	const { handleClick, isLoading } = useGetRequestId();
+
 	return (
 		<motion.div
 			style={{ zIndex: 9999 }}
@@ -41,12 +43,14 @@ function Menu({ openMenu, setOpenMenu }: MenuProps) {
 						))}
 					</nav>
 
-					<Link to="/dashboard/admission" className="mx-auto mt-auto">
+					<div className="mx-auto mt-auto">
 						<Button
 							title="Get Started"
+							isLoading={isLoading}
+							onClick={handleClick}
 							className="!min-w-[100px] rounded-lg px-5"
 						/>
-					</Link>
+					</div>
 				</div>
 			</motion.div>
 		</motion.div>
