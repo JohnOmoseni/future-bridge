@@ -1,7 +1,5 @@
 import {
-	blogImage1,
 	blogImage2,
-	blogImage3,
 	blogImage4,
 	blogImage6,
 	blogImage7_1,

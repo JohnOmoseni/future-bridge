@@ -59,19 +59,21 @@ function BlogDetails() {
 												key={idx}
 												className={cn("flex-column gap-2 sm:px-1")}
 											>
-												<h3 className="font-semibold row-flex-start gap-1.5 text-lg">
-													<span
-														className={cn(
-															"font-semibold ",
-															idx === blog.sections?.length - 1
-																? "hidden"
-																: "inline-block"
-														)}
-													>
-														{idx + 1}.
-													</span>
-													{section.title}
-												</h3>
+												{blog.sections && (
+													<h3 className="font-semibold row-flex-start gap-1.5 text-lg">
+														<span
+															className={cn(
+																"font-semibold ",
+																idx === blog.sections?.length - 1
+																	? "hidden"
+																	: "inline-block"
+															)}
+														>
+															{idx + 1}.
+														</span>
+														{section.title}
+													</h3>
+												)}
 
 												{section?.post && (
 													<p className={cn("flex-column pr-2")}>
