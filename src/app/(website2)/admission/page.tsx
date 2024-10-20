@@ -46,10 +46,7 @@ function ApplicationPage() {
 								title="Retry Request ID"
 								onClick={handleClick}
 								disabled={isLoading}
-								className={cn(
-									"hidden",
-									requestId && "row-flex ml-auto mb-3 !px-5"
-								)}
+								className={cn("!px-5 ml-auto mb-3")}
 							/>
 						)}
 
