@@ -43,7 +43,7 @@ function Testimonials() {
 									className={cn(
 										"mt-auto relative leading-[1.35rem] tracking-tight",
 										lineClamp
-											? "line-clamp-5 md:line-clamp-[8] text-justify text-clip"
+											? "line-clamp-6 md:line-clamp-[8] text-justify text-clip"
 											: ""
 									)}
 								>

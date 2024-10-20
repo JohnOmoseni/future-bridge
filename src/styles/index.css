@@ -105,7 +105,7 @@
 		@apply relative bg-background-200;
 	}
 	.section {
-		@apply relative isolate min-h-[50vh] px-4 py-8 sm:px-[4%] sm:pt-[3em];
+		@apply relative isolate min-h-[40vh] px-4 pt-8 pb-4 sm:px-[4%] sm:pt-[3em];
 	}
 
 	/* CUSTOM BUTTON STYLES */

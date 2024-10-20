@@ -24,14 +24,14 @@ function BlogDetails() {
 			<div className="flex-column gap-4">
 				<BackArrow title={blog?.title} />
 
-				<div className="grid grid-cols-1 gap-6 mt-2">
+				<div className="grid grid-cols-1 gap-4 mt-2">
 					<img
 						src={blog?.banner}
 						alt=""
 						className="size-full max-h-[450px] max-w-[580px] max-sm:-mx-1"
 					/>
 
-					<div className="flex-column mt-3 sm:mt-6 pr-2 md:pr-4">
+					<div className="flex-column mt-4 sm:mt-6 pr-2 md:pr-4">
 						{blog?.introduction
 							.split("\n")
 							.map((line, index) =>
@@ -46,8 +46,8 @@ function BlogDetails() {
 					{blog?.sections && (
 						<div
 							className={cn(
-								"flex-column",
-								blog?.sectionType === "list" ? "gap-4" : "mt-3 gap-8"
+								"flex-column sm:mt-3",
+								blog?.sectionType === "list" ? "gap-4" : "gap-6 sm:gap-8"
 							)}
 						>
 							{blog.sections.map((section, idx) => {
@@ -60,7 +60,7 @@ function BlogDetails() {
 												className={cn("flex-column gap-2 sm:px-1")}
 											>
 												{blog.sections && (
-													<h3 className="font-semibold row-flex-start gap-1.5 text-lg">
+													<h3 className="font-semibold row-flex-start gap-1.5 text-[1.1rem]">
 														<span
 															className={cn(
 																"font-semibold ",
@@ -83,7 +83,7 @@ function BlogDetails() {
 																line.trim() !== "" ? (
 																	<p key={index}>{line}</p>
 																) : (
-																	<br key={index} />
+																	<br key={index} className="" />
 																)
 															)}
 													</p>
@@ -148,7 +148,7 @@ function BlogDetails() {
 															section?.style?.align_items === "center"
 																? "items-center"
 																: "items-start",
-															section?.style ? "grid mt-5" : "flex-column"
+															section?.style ? "grid sm:mt-5" : "flex-column"
 														)}
 													>
 														<p

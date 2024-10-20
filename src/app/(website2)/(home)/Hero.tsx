@@ -13,7 +13,7 @@ function Hero() {
 	return (
 		<div className="hero relative min-h-dvh w-full pb-8 pt-14 lg:pt-[4%]">
 			<div className="size-full flex-column gap-8 sm:row-flex !items-start">
-				<div className="flex-1 px-[max(1em,_5%)]">
+				<div className="flex-1 px-[max(1.3em,_5%)]">
 					<h1 className="relative max-sm:text-center">
 						<span className="relative isolate text-white">
 							Sha

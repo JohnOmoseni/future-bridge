@@ -20,7 +20,7 @@ function Posts() {
 
 				<div className="mt-6 flex-column md:grid grid-cols-[1fr_1.5fr] gap-8 lg:gap-16">
 					<ul className="flex-column gap-6 w-full">
-						{[1, 2, 3, 4]?.map((id) => {
+						{[2, 3, 4, 5, 6]?.map((id) => {
 							const blog = blogs.find((b) => b.id === id);
 							return <PostCard key={blog?.id} blog={blog} />;
 						})}
