@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useGetRequestId } from "@/hooks/useGetRequestId";
 import { navLinks } from "@/constants/dashboard-index";
 import NavLinks from "./NavLinks";
+import { toast } from "sonner";
 
 type HeaderProps = {
 	setOpenMenu?: Dispatch<SetStateAction<boolean>>;
@@ -41,6 +42,10 @@ function Header2({ setOpenMenu }: HeaderProps) {
 				<div className={cn("sm:row-flex hidden")}>
 					<Button
 						title="Portal"
+						onClick={() => {
+							toast.info("Coming soon!");
+							return;
+						}}
 						className="!min-w-[180px] rounded-lg px-5 sm:px-7"
 					/>
 				</div>

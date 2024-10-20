@@ -34,7 +34,16 @@ export function useGetRequestId(): any {
 		}
 	};
 
-	return { handleClick, isLoading };
+	useEffect(() => {
+		refetch().then(() => {
+			if (data?.request_id) {
+				toast.success("Request ID generated successfully!");
+				localStorage.setItem("REQUEST_ID", data.request_id);
+			}
+		});
+	}, []);
+
+	return { isLoading };
 }
 
 // Offline support

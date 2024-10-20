@@ -1,5 +1,5 @@
+import { useGetRequestId } from "@/hooks/useGetRequestId";
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
 import ApplicantForm from "@/components/forms/website-2/ApplicantForm";
 import SectionWrapper from "@/layouts/SectionWrapper";
 import MultiStepForm from "../_components/MultistepIndicator";
@@ -8,9 +8,11 @@ import DocumentForm from "@/components/forms/website-2/DocumentForm";
 import ApplicationSuccess from "./success";
 
 function ApplicationPage() {
-	const { state } = useLocation();
-	const [requestId] = useState(state);
+	const requestId: string | null | undefined =
+		localStorage.getItem("REQUEST_ID");
+
 	const [step, setStep] = useState(1);
+	const {} = useGetRequestId();
 
 	const nextStep = () => {
 		setStep((prev) => Math.min(4, prev + 1));

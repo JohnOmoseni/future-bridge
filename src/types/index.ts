@@ -17,7 +17,7 @@ export type NavLinkProps = {
 
 export type FormProps = {
 	step?: number;
-	requestId?: string;
+	requestId?: string | null;
 	nextStep?: () => void;
 	prevStep?: () => void;
 };
