@@ -86,12 +86,6 @@
 
 	/* GRADIENTS */
 	.bg-gradient-hero {
-		/* background: linear-gradient(
-      90deg,
-      rgba(2, 0, 36, 1) 0%,
-      rgba(37, 37, 148, 1) 35%,
-      rgba(62, 62, 250, 1) 100%
-    ); */
 		background: rgb(62, 62, 250);
 		background: radial-gradient(
 			circle,
