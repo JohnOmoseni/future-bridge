@@ -253,3 +253,18 @@ export const galleries = [
 		gallery: [artGallery_1, artGallery_2, artGallery_3, artGallery_4],
 	},
 ];
+
+export const bank_details = [
+	{
+		label: "Bank Name",
+		value: "First Bank of Nigeria",
+	},
+	{
+		label: "Account Number",
+		value: "3086534567",
+	},
+	{
+		label: "Account Name",
+		value: "St. Endas college",
+	},
+];

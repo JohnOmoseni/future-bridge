@@ -1,49 +1,44 @@
 import { publicApiWebsite2 } from "@/server/req/requestApis";
 import { useQuery } from "@tanstack/react-query";
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useCallback, useState } from "react";
 import { toast } from "sonner";
 
 export function useGetRequestId(): any {
-	const { data, isLoading, isError, isSuccess, refetch } = useQuery({
+	const [hasFetched, setHasFetched] = useState(false);
+
+	const { isLoading, refetch } = useQuery({
 		queryKey: ["getRequestId"],
 		queryFn: () => publicApiWebsite2.getRequestId(),
 		enabled: false,
 	});
 
-	const navigate = useNavigate();
-
-	useEffect(() => {
-		if (isError) toast.error("Error!", { description: "Something went wrong" });
-		else if (isSuccess && data?.request_id)
-			navigate("/dashboard/admission", { state: data?.request_id });
-	}, [isError, isSuccess, data, navigate]);
-
-	const handleClick = () => {
+	const fetchRequestId = useCallback(() => {
 		const storedRequestId = localStorage.getItem("REQUEST_ID");
-		if (storedRequestId) {
-			navigate("/dashboard/admission/success");
-		} else {
-			refetch().then(() => {
-				if (data?.request_id) {
+		if (!storedRequestId && !hasFetched) {
+			refetch().then((res) => {
+				if (res.data?.request_id) {
 					toast.success("Request ID generated successfully!");
-					localStorage.setItem("REQUEST_ID", data.request_id);
-					navigate("/dashboard/admission", { state: data.request_id });
+					localStorage.setItem("REQUEST_ID", res?.data?.request_id);
+					setHasFetched(true);
 				}
 			});
 		}
-	};
+	}, [hasFetched, refetch]);
 
 	useEffect(() => {
-		refetch().then(() => {
-			if (data?.request_id) {
-				toast.success("Request ID generated successfully!");
-				localStorage.setItem("REQUEST_ID", data.request_id);
-			}
-		});
-	}, []);
+		if (!hasFetched) {
+			fetchRequestId();
+		}
+	}, [fetchRequestId, hasFetched]);
 
-	return { isLoading };
+	const handleClick = useCallback(() => {
+		const storedRequestId = localStorage.getItem("REQUEST_ID");
+		if (!storedRequestId) {
+			fetchRequestId();
+		}
+	}, [fetchRequestId]);
+
+	return { isLoading, handleClick };
 }
 
 // Offline support

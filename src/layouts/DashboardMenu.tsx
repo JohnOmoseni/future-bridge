@@ -4,12 +4,10 @@ import { animateFn, revealMenu, slideinVariant } from "@/lib/animate";
 import { MenuProps } from "@/types";
 import { Button } from "../components/CustomButton";
 import { navLinks } from "@/constants/dashboard-index";
-import { useGetRequestId } from "@/hooks/useGetRequestId";
 import NavLinks from "./NavLinks";
+import { Link } from "react-router-dom";
 
 function Menu({ openMenu, setOpenMenu }: MenuProps) {
-	const { handleClick, isLoading } = useGetRequestId();
-
 	return (
 		<motion.div
 			style={{ zIndex: 9999 }}
@@ -20,7 +18,7 @@ function Menu({ openMenu, setOpenMenu }: MenuProps) {
 			<motion.div
 				{...animateFn(slideinVariant)}
 				className="menu remove-scrollbar flex-column absolute right-0 top-0 isolate h-full w-[80%] max-w-[500px] overflow-hidden bg-background-100 px-[4%] pb-6 pt-4 backdrop-blur-sm"
-				onClick={(e) => e.stopPropagation()}
+				// onClick={(e) => e.stopPropagation()}
 			>
 				<span
 					className="icon absolute right-4 top-4 p-1 transition-colors active:scale-95"
@@ -43,14 +41,12 @@ function Menu({ openMenu, setOpenMenu }: MenuProps) {
 						))}
 					</nav>
 
-					<div className="mx-auto mt-auto">
+					<Link to="/dashboard/admission" className="mx-auto row-flex mt-auto">
 						<Button
 							title="Get Started"
-							isLoading={isLoading}
-							onClick={handleClick}
 							className="!min-w-[100px] rounded-lg px-5"
 						/>
-					</div>
+					</Link>
 				</div>
 			</motion.div>
 		</motion.div>

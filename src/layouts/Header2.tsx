@@ -4,10 +4,9 @@ import { Button } from "@/components/CustomButton";
 import { Dispatch, SetStateAction } from "react";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
-import { useGetRequestId } from "@/hooks/useGetRequestId";
+import { toast } from "sonner";
 import { navLinks } from "@/constants/dashboard-index";
 import NavLinks from "./NavLinks";
-import { toast } from "sonner";
 
 type HeaderProps = {
 	setOpenMenu?: Dispatch<SetStateAction<boolean>>;
@@ -16,7 +15,7 @@ type HeaderProps = {
 function Header2({ setOpenMenu }: HeaderProps) {
 	return (
 		<div className="relative z-10 flex min-h-[70px] w-full px-3 py-1 shadow-sm">
-			<div className="row-flex-btwn mx-auto gap-4 sm:w-[96%] w-full">
+			<div className="row-flex-btwn mx-auto gap-4 w-full">
 				<div
 					className="icon group sm:!hidden"
 					onClick={() => setOpenMenu && setOpenMenu(true)}
@@ -28,9 +27,9 @@ function Header2({ setOpenMenu }: HeaderProps) {
 				</div>
 
 				<Link to="/dashboard" className="max-sm:w-full">
-					<LogoMobile className="block sm:hidden h-fit w-48 max-md:mx-auto max-sm:max-w-[260px]" />
+					<LogoMobile className="block sm:hidden h-fit w-44 max-md:mx-auto " />
 
-					<Logo className="hidden sm:block h-fit w-fit max-md:mx-auto max-sm:max-w-[260px]" />
+					<Logo className="hidden sm:block h-fit w-fit max-md:mx-auto " />
 				</Link>
 
 				<div className="lg:row-flex hidden gap-8 px-3">
@@ -39,7 +38,7 @@ function Header2({ setOpenMenu }: HeaderProps) {
 					))}
 				</div>
 
-				<div className={cn("sm:row-flex hidden")}>
+				<div className={cn("sm:row-flex hidden mr-[2%]")}>
 					<Button
 						title="Portal"
 						onClick={() => {
