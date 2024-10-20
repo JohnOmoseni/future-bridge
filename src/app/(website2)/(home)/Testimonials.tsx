@@ -10,23 +10,28 @@ function Testimonials() {
 					Hear what our esteemed Parents have to say about us!
 				</p>
 
-				<ul className="mt-10 gap-6 grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))]">
+				<ul className="mt-10 gap-6 grid grid-cols-[repeat(auto-fit,_minmax(220px,_1fr))]">
 					{testimonials.map(({ img, name, tag, body }, idx) => (
 						<li
 							key={idx}
-							className="flex-column group min-h-32 flex-none gap-4 rounded-xl border-border bg-background-100 px-6 pb-5 pt-3.5 shadow-sm md:max-w-md"
+							className="flex-column group min-h-32 flex-none gap-4 rounded-xl border-border bg-background-100 px-6 pb-5 pt-3.5 shadow hover:shadow-md transition-all md:max-w-md"
 						>
-							<div className="flex gap-3">
-								<div className="relative h-12 w-12 overflow-hidden rounded-full border border-slate-300 border-opacity-30 p-px shadow-sm">
-									<img src={img} alt="" className="object-contain" />
+							<div className="grid grid-cols-[max-content_1fr] gap-3 items-center">
+								<div className="relative size-12 overflow-hidden rounded-full border border-slate-300 border-opacity-30 p-px shadow-sm clip-circle self-start">
+									<img src={img} alt="" className="object-contain size-full" />
 								</div>
 								<div>
-									<h3 className="capitalize">{name}</h3>
+									<h3
+										title={name}
+										className="capitalize line-clamp-2 cursor-default "
+									>
+										{name}
+									</h3>
 									<p className="text-sm capitalize text-grey">{tag}</p>
 								</div>
 							</div>
 
-							<p className="italics leading-[1.35rem] tracking-tight max-sm:text-base">
+							<p className="mt-auto leading-[1.35rem] tracking-tight line-clamp-5 sm:line-clamp-[10]">
 								{body}
 							</p>
 						</li>

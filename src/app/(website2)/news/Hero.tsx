@@ -1,4 +1,4 @@
-import { newsHero } from "@/constants/icons2";
+import { news_hero } from "@/constants/icons2";
 
 function Hero() {
 	return (
@@ -13,18 +13,18 @@ function Hero() {
 						Welcome back to school!
 					</h2>
 
-					<p className="mt-6 text-base tracking-wide brightness-75 pr-2 leading-6 md:max-w-[60ch]">
-						We are thrilled to announce the arrival of our dynamic new
-						Principal, Rev Fr Samuel A. Taiwo, who brings a wealth of
-						experience, passion, and dedication to our school community. With
-						Rev Fr Samuel A. Taiwo at the helm, we are embarking on an exciting
-						new chapter of educational excellence and innovation.
+					<p className="mt-5 brightness-75 pr-2 leading-6 md:max-w-[60ch]">
+						As we begin this new academic year, remember that every fresh start
+						brings endless possibilities. Seize this opportunity to set new
+						goals, make lasting connections, and unlock your full potential.
+						Together, let's make this year unforgettable. Welcome back to St.
+						Endas College!
 					</p>
 				</div>
 
 				<div
 					className="bg-cover bg-no-repeat bg-center max-md:h-[300px] size-full max-md:order-1"
-					style={{ backgroundImage: `url(${newsHero})` }}
+					style={{ backgroundImage: `url(${news_hero})` }}
 				/>
 			</div>
 		</div>

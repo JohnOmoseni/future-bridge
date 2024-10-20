@@ -23,7 +23,7 @@ function Calendar() {
 					{calendarData?.map((card, idx) => (
 						<div
 							className={cn(
-								"rounded-sm shadow py-3.5 px-3 sm:px-4 flex-column gap-2",
+								"rounded-sm h-full shadow py-3.5 px-3 sm:px-4 flex-column w-full justify-between gap-2",
 								`bg-${card.color}-200`
 							)}
 							key={idx}
@@ -36,9 +36,7 @@ function Calendar() {
 								{card?.body}
 							</p>
 
-							<span className="mt-auto inline-block text-xs">
-								{card?.created_at}
-							</span>
+							<span className=" inline-block text-xs">{card?.created_at}</span>
 						</div>
 					))}
 				</div>

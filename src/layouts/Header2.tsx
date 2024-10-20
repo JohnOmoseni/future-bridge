@@ -13,8 +13,6 @@ type HeaderProps = {
 };
 
 function Header2({ setOpenMenu }: HeaderProps) {
-	const { handleClick, isLoading } = useGetRequestId();
-
 	return (
 		<div className="relative z-10 flex min-h-[70px] w-full px-3 py-1 shadow-sm">
 			<div className="row-flex-btwn mx-auto gap-4 sm:w-[96%] w-full">
@@ -43,8 +41,6 @@ function Header2({ setOpenMenu }: HeaderProps) {
 				<div className={cn("sm:row-flex hidden")}>
 					<Button
 						title="Portal"
-						onClick={handleClick}
-						isLoading={isLoading}
 						className="!min-w-[180px] rounded-lg px-5 sm:px-7"
 					/>
 				</div>

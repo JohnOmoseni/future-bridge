@@ -1,5 +1,5 @@
 import { FiMenu as MenuIcon } from "react-icons/fi";
-import { IoClose as Close } from "react-icons/io5";
+import { IoClose as Close, IoLogoTiktok as TikTok } from "react-icons/io5";
 import { FiTwitter as Twitter } from "react-icons/fi";
 import { PiChatTeardropLight as Chat } from "react-icons/pi";
 import { BsEnvelope as Envelope } from "react-icons/bs";
@@ -73,6 +73,7 @@ export {
 	Location,
 	Youtube,
 	Facebook,
+	TikTok,
 	aboutImage1,
 	aboutImage2,
 	aboutImage3,

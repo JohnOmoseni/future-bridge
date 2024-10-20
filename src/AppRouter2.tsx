@@ -7,8 +7,8 @@ import AdmissionPage from "./app/(website2)/admission/page";
 import Calendar from "./app/(website2)/calendar/page";
 import Gallery from "./app/(website2)/gallery/page";
 import News from "./app/(website2)/news/page";
-import WelcomeNote from "./app/(website2)/news/WelcomeNote";
 import DashboardLayout from "./layouts/DashboardLayout";
+import BlogDetails from "./app/(website2)/news/BlogDetails";
 
 const AppRouter2 = () => {
 	return (
@@ -24,7 +24,7 @@ const AppRouter2 = () => {
 
 				<Route path="news">
 					<Route index element={<News />} />
-					<Route path="welcome" element={<WelcomeNote />} />
+					<Route path=":id" element={<BlogDetails />} />
 				</Route>
 
 				<Route path="admission">
