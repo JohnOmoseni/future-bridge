@@ -1,17 +1,24 @@
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
-import { blogImage3, blogImage5 } from "@/constants/icons2";
-import { newsPost } from "@/constants/dashboard-index";
 import { blogs } from "@/constants/blogs";
+import { newsPost } from "@/constants/dashboard-index";
 
 function Posts() {
 	return (
 		<section>
 			<div className="rounded-xl bg-background-100 shadow max-sm:absolute max-sm:left-1/2 max-sm:-translate-x-1/2 relative w-max -top-24 left-8">
 				<ul className="p-3 row-flex-btwn gap-8">
-					{[blogImage5, blogImage3]?.map((img, idx) => (
-						<PostCardSmall key={idx} img={img} idx={idx} />
-					))}
+					{[1, 3]?.map((id, idx) => {
+						const blog = blogs.find((b) => b.id === id);
+						return (
+							<PostCardSmall
+								key={idx}
+								blog={blog}
+								img={blog?.banner || ""}
+								idx={idx}
+							/>
+						);
+					})}
 				</ul>
 			</div>
 
@@ -53,7 +60,10 @@ function Posts() {
 
 									{idx !== 0 && (
 										<div className="w-full brightness-[0.8] mt-3 row-flex-btwn text-xs fap-4">
-											<Link to={link} className="">
+											<Link
+												to={link}
+												className="hover:brightness-100 transition"
+											>
 												Read
 											</Link>
 
@@ -118,10 +128,18 @@ function PostCard({ blog }: { blog: PostProps | undefined }) {
 		</li>
 	);
 }
-const PostCardSmall = ({ img, idx }: { img: string; idx: number }) => (
+const PostCardSmall = ({
+	img,
+	idx,
+	blog,
+}: {
+	img: string;
+	idx: number;
+	blog?: PostProps;
+}) => (
 	<li
 		className={cn(
-			"row-flex-start gap-4 !items-start group relative w-full overflow-hidden rounded-lg transition hover:shadow-sm",
+			"row-flex-start gap-4 !items-start group relative w-full overflow-hidden rounded-lg transition",
 			idx === 1 && "max-sm:hidden"
 		)}
 	>
@@ -136,16 +154,16 @@ const PostCardSmall = ({ img, idx }: { img: string; idx: number }) => (
 		</div>
 
 		<div className="flex-column self-stretch flex-1 w-full gap-1.5 py-2 pr-2">
-			<span className="text-xs">September 25th, 2024</span>
+			<span className="text-xs">{blog?.created_at}</span>
 
-			<Link to="#" className="inline-flex">
-				<h4 className="line-clamp-2 leading-5 capitalize font-semibold">
-					Whispering palm <br /> excursion!!{" "}
+			<Link to={`/dashboard/news/${blog?.id}`} className="inline-flex">
+				<h4 className="line-clamp-2 leading-5 w-[16ch] capitalize font-semibold">
+					{blog?.title || "Unknown"}
 				</h4>
 			</Link>
 
 			<Link
-				to="#"
+				to={`/dashboard/news/${blog?.id}`}
 				className="text-sm font-medium mt-3 leading-4 text-foreground-variant"
 			>
 				Read &gt;&gt;&gt;

@@ -22,7 +22,7 @@ function Gallery() {
 						>
 							<h3>{title}</h3>
 
-							<div className="mt-6 sm:mt-8 grid-cols-2 grid-rows-[100px_150px_300px] grid sm:grid-cols-[1fr_1fr_1.5fr] sm:grid-rows-[200px_250px] gap-x-2 gap-y-2.5">
+							<div className="mt-6 sm:mt-8 grid-cols-2 grid-rows-[150px_200px_300px] grid sm:grid-cols-[1fr_1fr_1.5fr] sm:grid-rows-[200px_250px] gap-x-2 gap-y-2.5">
 								<img
 									src={gallery_1}
 									alt=""
