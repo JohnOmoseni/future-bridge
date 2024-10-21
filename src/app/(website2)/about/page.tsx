@@ -13,7 +13,7 @@ function About() {
 					{about?.map(({ title, img, body }, idx) => (
 						<li
 							key={idx}
-							className="grid grid-cols-1 items-center sm:grid-cols-[1fr_minmax(auto,_1fr)] gap-6 sm:gap-12 min-h-[40vh] sm:px-1"
+							className="grid grid-cols-1 items-center sm:grid-cols-[1fr_minmax(auto,_1fr)] gap-6 sm:gap-12 min-h-[20vh] sm:px-1"
 						>
 							<div
 								className={cn(

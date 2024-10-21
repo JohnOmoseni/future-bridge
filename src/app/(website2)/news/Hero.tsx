@@ -2,7 +2,7 @@ import { news_hero } from "@/constants/icons2";
 
 function Hero() {
 	return (
-		<div className="max-sm:min-h-[90vh] sm:h-[70vh] bg-[#151318F0] max-sm:pb-20 max-sm:rounded-xl max-sm:m-3 overflow-hidden">
+		<div className="max-sm:min-h-[90vh] sm:h-[70vh] sm:max-h-[450px] bg-[#151318F0] max-sm:pb-20 max-sm:rounded-xl max-sm:m-3 overflow-hidden">
 			<div className="flex-column items-center md:grid h-full grid-cols-[auto_1.5fr] ">
 				<div className="size-full flex-column max-md:order-2 px-6 py-10 text-secondary-foreground md:px-[8%] md:pt-[15%] ">
 					<div className="rounded-sm py-2.5 px-3.5 w-max text-xs mb-4 bg-secondary">
