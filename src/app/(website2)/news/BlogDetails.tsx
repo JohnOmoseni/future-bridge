@@ -202,7 +202,7 @@ function BlogDetails() {
 													</div>
 												)}
 												{section?.images && (
-													<div className="grid w-full gap-4 grid-cols-1 sm:grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] xl:grid-cols-[repeat(auto-fit,_minmax(400px,_1fr))] overflow-hidden">
+													<div className="grid w-full gap-4 grid-cols-1 sm:grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] xl:grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] overflow-hidden">
 														{section.images?.map((image, idx) => (
 															<img
 																src={image}
