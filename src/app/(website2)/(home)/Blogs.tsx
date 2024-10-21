@@ -24,7 +24,7 @@ function Blogs() {
 								/>
 							</div>
 
-							<div className="flex-column self-stretch flex-1 w-full gap-2 pt-3 pb-4 pr-1.5">
+							<div className="flex-column self-stretch flex-1 w-full gap-2 py-3 pr-1">
 								<span className="text-xs text-foreground-variant font-semibold">
 									{blog?.created_at}
 								</span>

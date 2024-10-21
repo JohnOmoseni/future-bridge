@@ -4,7 +4,7 @@ import { Square } from "@/constants/icons";
 
 function Contact() {
 	return (
-		<div className="relative max-md:min-h-dvh isolate grid md:grid-cols-2 md:gap-16 lg:justify-between">
+		<div className="relative max-md:min-h-dvh min-h-[70vh] isolate grid md:grid-cols-2 md:gap-16 lg:justify-between">
 			<div className="w-full h-max max-md:order-2 relative px-6 pt-8 sm:pb-4 md:px-[8%] sm:pt-[3em]">
 				<ContactUsForm />
 			</div>
