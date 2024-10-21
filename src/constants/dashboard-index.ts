@@ -203,7 +203,7 @@ export const testimonials = [
 		img: review3,
 		name: "Mrs. Adakre",
 		tag: "Parent",
-		body: "St Endas has constantly demonstrated strong academic performance with students showing significant improvement in external standardized test scores and the school's extra curricular programs are incredible.For our boys, attending this school has been transformative. They've shown significant academic growth, developing confidence in their abilities and critical thinking skills. Socially, they've formed strong friendships and developed essential life skills like teamwork and empathy. The school's focus on character development has also helped them become more self-aware, responsible, and compassionate individuals.",
+		body: "St Endas has constantly demonstrated strong academic performance with students showing significant improvement in external standardized test scores and the school's extra curricular programs are incredible. For our boys, attending this school has been transformative. They've shown significant academic growth, developing confidence in their abilities and critical thinking skills. Socially, they've formed strong friendships and developed essential life skills like teamwork and empathy. The school's focus on character development has also helped them become more self-aware, responsible, and compassionate individuals.",
 	},
 ];
 
@@ -227,13 +227,6 @@ export const newsPost = [
 		image: news_3,
 		text: "The subtle act of reading a lot!",
 		link: "/dashboard/news/1",
-	},
-	{
-		id: 4,
-		image: news_4,
-		text: "The subtle act of reading a lot!",
-		link: "/dashboard/news/2",
-		read_time: "",
 	},
 ];
 

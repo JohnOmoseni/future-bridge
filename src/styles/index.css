@@ -248,6 +248,30 @@
 			"featureImage1 featureImage3 text3 text3";
 	}
 
+	.features-xl {
+		grid-template-columns: 400px 350px 100px auto;
+		grid-template-rows: minmax(150px, auto) minmax(100px, auto) minmax(
+				150px,
+				160px
+			);
+		grid-template-areas:
+			"featureImage1 featureImage2 text1 text1"
+			"featureImage1 featureImage2 . text2"
+			"featureImage1 featureImage3 text3 text3";
+	}
+
+	.features-2xl {
+		grid-template-columns: 500px 350px 120px auto;
+		grid-template-rows: minmax(120px, 180px) minmax(100px, 120px) minmax(
+				150px,
+				160px
+			);
+		grid-template-areas:
+			"featureImage1 featureImage2 text1 text1"
+			"featureImage1 featureImage2 . text2"
+			"featureImage1 featureImage3 text3 text3";
+	}
+
 	.featureImage1 {
 		grid-area: featureImage1;
 	}

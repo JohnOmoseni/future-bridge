@@ -24,7 +24,7 @@ function BlogDetails() {
 			<div className="flex-column gap-4">
 				<BackArrow title={blog?.title} />
 
-				<div className="grid grid-cols-1 gap-4 mt-2">
+				<div className="grid grid-cols-1 gap-4 my-2 overflow-hidden">
 					<img
 						src={blog?.banner}
 						alt=""

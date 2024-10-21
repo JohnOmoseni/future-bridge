@@ -9,12 +9,12 @@ function Features() {
 
 			<h3>What do we have to show at St. Endas?</h3>
 
-			<div className="mt-6 md:mt-12">
-				<div className="flex-column sm:features-md lg:features-lg sm:grid gap-4">
+			<div className="mt-6 md:mt-12 mb-4 w-full">
+				<div className="flex-column sm:features-md lg:features-lg xl:features-xl 2xl:features-2xl sm:grid gap-4">
 					<img
 						src={feature1}
 						alt=""
-						className="featureImage1 max-sm:max-h-[450px] max-sm:w-full  object-cover"
+						className="featureImage1 rounded-lg max-sm:max-h-[450px] w-full  object-cover"
 					/>
 
 					<div className="text1 flex-column self-center">
@@ -31,7 +31,7 @@ function Features() {
 					<img
 						src={feature2}
 						alt=""
-						className="h-full max-sm:max-h-[300px] max-sm:w-full featureImage2 object-cover"
+						className="h-full rounded-lg max-sm:max-h-[300px] max-sm:w-full featureImage2 object-cover"
 					/>
 
 					<div className="text2">
@@ -47,7 +47,7 @@ function Features() {
 					<img
 						src={feature3}
 						alt=""
-						className="featureImage3 h-full max-sm:max-h-[300px] max-sm:w-full object-cover"
+						className="featureImage3 rounded-lg h-full max-sm:max-h-[300px] max-sm:w-full object-cover"
 					/>
 
 					<div className="text3 flex-column">

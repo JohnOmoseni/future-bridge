@@ -12,7 +12,7 @@ function Blogs() {
 					return (
 						<li
 							key={index}
-							className="lg:min-w-[410px] row-flex-start gap-3.5 md:gap-5 !items-start group relative w-full overflow-hidden rounded-lg transition hover:shadow-sm max-sm:min-w-[300px]"
+							className="lg:min-w-[410px] h-full row-flex-start gap-3.5 md:gap-5 !items-start group relative w-full overflow-hidden rounded-lg transition hover:shadow-sm max-sm:min-w-[300px]"
 						>
 							<div className="relative min-h-[180px] w-2/5 self-stretch">
 								<img

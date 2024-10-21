@@ -1,4 +1,5 @@
 import {
+	artGallery_4,
 	blogImage2,
 	blogImage4,
 	blogImage6,
@@ -49,7 +50,7 @@ export const blogs: BlogProps[] = [
 		id: 1,
 		banner: blogImage_career_1,
 		title: "Dream Big: Career day at St. Endas College.",
-		created_at: "August 15, 2024",
+		created_at: "January 24th, 2024",
 		introduction:
 			"St. Endas College recently hosted its annual Dream Big! Career Day, a highly anticipated event designed to expose students to a diverse array of career paths and provide guidance as they plan their futures. The event featured an exciting lineup of professionals from a wide range of industries, including medicine, engineering, business, arts, law, and technology. Through interactive workshops, panel discussions, and personal presentations, students were encouraged to explore various career options and discover the skills, education, and personal attributes needed to succeed in each field. \n \n This year’s Dream Big! Career Day aimed to broaden students’ horizons and empower them to pursue their passions with confidence. Keynote speakers included industry leaders and alumni who shared their own career journeys, highlighting the challenges and rewards of different professions. The sessions allowed students to engage directly with professionals, ask questions, and gain invaluable insight into what it takes to thrive in their chosen careers. \n \n Among the highlights of the day was a panel discussion on the future of work, which featured experts in emerging fields such as artificial intelligence, green energy, and digital marketing. The panelists discussed the evolving job market, emphasizing the importance of adaptability and lifelong learning in a rapidly changing world. Students were inspired by the stories of professionals who had forged unconventional career paths, showcasing the many opportunities available to those willing to think outside the box. In addition to the career panels, the event included hands-on workshops where students could experience various professions firsthand.",
 		sections: [
@@ -77,7 +78,7 @@ export const blogs: BlogProps[] = [
 		id: 2,
 		banner: blogImage2,
 		title: "An Excursion to Bruce Onobrakpeya Art Gallery and MCIU",
-		created_at: "August 15, 2024",
+		created_at: "October 28th, 2023",
 		introduction:
 			"St. Enda’s College students recently had the opportunity to participate in an enriching excursion to the Bruce Onobrakpeya Art Gallery and Michael and Cecilia Ibru University (MCIU), a visit that blended art, culture, and academic exploration. The trip, which was designed to broaden students' understanding of Nigerian art and higher education, provided a unique opportunity to engage with one of the country’s most esteemed artistic legacies, while also exploring opportunities for future academic growth. \n \n At the Bruce Onobrakpeya Art Gallery, students were introduced to the works of the renowned Nigerian artist, who is celebrated globally for his innovative techniques in printmaking, painting, and sculpture. The gallery tour showcased a vast collection of Onobrakpeya’s works, including his iconic prints and intricate metal sculptures, which reflect a deep connection to Nigerian culture, folklore, and history. Students were captivated by the richness of his art, which combines traditional themes with modern techniques, and were able to ask questions about his creative process and the inspiration behind his pieces.",
 		sections: [
@@ -94,7 +95,7 @@ export const blogs: BlogProps[] = [
 				post: 'During a Q&A session with MCIU staff, students learned about the university’s focus on entrepreneurship and innovation, with an emphasis on how MCIU prepares students for success in a rapidly evolving global workforce. The visit was particularly valuable for senior students as they start to consider their post-secondary education options, providing them with insight into a local institution that emphasizes practical skills, academic excellence, and personal development. \n \n Principal Father Taiwo praised the excursion for its dual focus on arts and academics, stating, "This trip was an excellent way for our students to explore both creative expression and academic opportunities. The Bruce Onobrakpeya Art Gallery exposed them to the richness of Nigerian culture, while the visit to MCIU opened their eyes to the possibilities of higher education and entrepreneurship." \n \n Students returned from the excursion inspired by both the artistic and academic experiences, with many expressing excitement about the paths they could explore in the future. The trip successfully combined cultural education and future planning, aligning with St. Endas College’s commitment to fostering well-rounded students who are both creatively and intellectually prepared for the future.',
 			},
 			{
-				images: [blogImage_excursion_1, blogImage_excursion_2, blogImage4],
+				images: [blogImage_excursion_1, blogImage_excursion_2, artGallery_4],
 			},
 		],
 	},

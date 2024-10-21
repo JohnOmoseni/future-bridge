@@ -12,7 +12,7 @@ const SectionWrapper = ({ children, containerStyles, id }: Props) => {
 		<div
 			id={id}
 			className={cn(
-				"relative isolate min-h-[50vh] px-4 pt-6 sm:pb-4 sm:px-[4%] sm:pt-[3em]",
+				"relative isolate min-h-[25vh] px-4 pt-6 sm:pb-4 sm:px-[4%] sm:pt-[3em]",
 				containerStyles
 			)}
 		>

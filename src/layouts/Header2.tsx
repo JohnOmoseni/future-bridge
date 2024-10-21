@@ -14,7 +14,7 @@ type HeaderProps = {
 
 function Header2({ setOpenMenu }: HeaderProps) {
 	return (
-		<div className="relative z-10 flex min-h-[70px] w-full px-3 py-1 shadow-sm">
+		<div className="relative z-10 flex min-h-[70px] max-sm:max-h-[80px] w-full px-3 py-1 shadow-sm">
 			<div className="row-flex-btwn mx-auto gap-4 w-full">
 				<div
 					className="icon group sm:!hidden"

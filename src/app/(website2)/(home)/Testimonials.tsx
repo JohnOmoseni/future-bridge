@@ -20,7 +20,7 @@ function Testimonials() {
 								key={idx}
 								className="flex-column group min-h-32 flex-none gap-4 rounded-xl border-border bg-background-100 px-6 pb-5 pt-3.5 shadow hover:shadow-md transition-all md:max-w-md"
 							>
-								<div className="grid grid-cols-[max-content_1fr] gap-3 items-center">
+								<div className="w-full grid grid-cols-[max-content_1fr] gap-3  sm:min-h-[70px] sm:max-h-[80px]">
 									<div className="relative size-12 overflow-hidden rounded-full border border-slate-300 border-opacity-30 p-px shadow-sm clip-circle self-start">
 										<img
 											src={img}
@@ -41,9 +41,9 @@ function Testimonials() {
 
 								<p
 									className={cn(
-										"mt-auto relative leading-[1.35rem] tracking-tight",
+										"relative pr-0.5 leading-[1.35rem] tracking-tight",
 										lineClamp
-											? "line-clamp-6 md:line-clamp-[8] text-justify text-clip"
+											? "line-clamp-6 md:line-clamp-[8] text-justify"
 											: ""
 									)}
 								>

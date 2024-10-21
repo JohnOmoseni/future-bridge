@@ -25,7 +25,7 @@ function About() {
 									{title}
 								</h4>
 
-								<p className="pr-4 sm:pr-1.5">{body}</p>
+								<p className="pr-1.5">{body}</p>
 							</div>
 							<img
 								src={img}

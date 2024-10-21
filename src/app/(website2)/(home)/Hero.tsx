@@ -42,13 +42,9 @@ function Hero() {
 						<Button title="Register now" className="px-10 !py-6 text-lg" />
 					</Link>
 
-					<div className="min-h-[350px] xl:min-h-[400px]">
-						<div className="max-sm:mt-12 mx-auto sm:absolute overflow-hidden h-[350px] bottom-[3%] md:bottom-[5%] right-[3%] -z-10 sm:h-[410px] min-[950px]:h-[450px] min-[1200px]:h-[500px] xl:min-h-[600px]">
-							<img
-								src={hero}
-								alt="hero"
-								className="max-[370px]:object-cover sm:object-contain size-full"
-							/>
+					<div className="min-h-[305px] sm:min-h-[350px] xl:min-h-[400px]">
+						<div className="max-sm:mt-12 mx-auto sm:absolute overflow-hidden max-[390px]:h-[300px] h-[350px] bottom-[3%] md:bottom-[5%] right-[3%] -z-10 sm:h-[410px] min-[950px]:h-[450px] min-[1200px]:h-[500px] xl:min-h-[600px]">
+							<img src={hero} alt="hero" className="object-contain size-full" />
 						</div>
 					</div>
 				</div>
