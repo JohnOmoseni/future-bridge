@@ -4,12 +4,12 @@ import { Square } from "@/constants/icons";
 
 function Contact() {
 	return (
-		<div className="relative max-md:min-h-dvh min-h-[70vh] isolate grid md:grid-cols-2 md:gap-16 lg:justify-between">
+		<div className="relative max-md:min-h-dvh min-h-[65vh] isolate grid md:grid-cols-2 md:gap-16 lg:justify-between">
 			<div className="w-full h-max max-md:order-2 relative px-6 pt-8 sm:pb-4 md:px-[8%] sm:pt-[3em]">
 				<ContactUsForm />
 			</div>
 
-			<div className="size-full max-md:h-[330px] relative max-md:order-1">
+			<div className="size-full max-md:h-[330px] md:max-h-[600px] relative max-md:order-1">
 				<div className="absolute top-1/2 max-md:left-1/2 max-md:-translate-x-1/2 w-4/5 h-[80%] md:h-3/5 max-h-[450px] z-10 -translate-y-1/2 sm:rounded-sm">
 					<img
 						src={contact}

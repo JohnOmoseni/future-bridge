@@ -18,7 +18,7 @@ function Testimonials() {
 						return (
 							<li
 								key={idx}
-								className="flex-column group min-h-32 flex-none gap-4 rounded-xl border-border bg-background-100 px-6 pb-5 pt-3.5 shadow hover:shadow-md transition-all md:max-w-md"
+								className="flex-column group min-h-32 flex-none gap-4 rounded-xl border-border bg-background-100 px-4 sm:px-6 pb-5 pt-3.5 shadow hover:shadow-md transition-all md:max-w-md"
 							>
 								<div className="w-full grid grid-cols-[max-content_1fr] gap-3  sm:min-h-[70px] sm:max-h-[80px]">
 									<div className="relative size-12 overflow-hidden rounded-full border border-slate-300 border-opacity-30 p-px shadow-sm clip-circle self-start">
