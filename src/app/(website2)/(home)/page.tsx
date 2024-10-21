@@ -10,7 +10,7 @@ function Home() {
 		<>
 			<Hero />
 
-			<div className="py-8 px-8 bg-[var(--bg-black)] text-secondary-foreground w-full min-h-[15vh] grid place-items-center">
+			<div className="py-8 sm:py-10 px-8 bg-[var(--bg-black)] text-secondary-foreground w-full min-h-[10vh] grid place-items-center">
 				<p className="text-center leading-6 max-w-[1000px] mx-auto">
 					St. Endas Colege Agbarho has been a symbol of excellence in education
 					over the years. Our mission is to continue to enhance the community by
