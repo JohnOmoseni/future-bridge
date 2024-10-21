@@ -8,7 +8,6 @@ import {
 	review1,
 	review2,
 	review3,
-	news_4,
 	career_1,
 	career_2,
 	career_3,
