@@ -6,6 +6,7 @@ import GetStartedSuccess from "./app/(website1)/get-started/success/page";
 import FAQs from "./app/(website1)/faqs/page";
 import Contact from "./app/(website1)/contact/page";
 import LayoutProvider from "./providers/LayoutProvider";
+import PrivacyPolicy from "./app/(website1)/privacy-policy/page";
 
 const AppRouter = () => {
 	return (
@@ -22,6 +23,7 @@ const AppRouter = () => {
 						<Route path="success" element={<GetStartedSuccess />} />
 					</Route>
 					<Route path="/faqs" element={<FAQs />} />
+					<Route path="/privacy-policy" element={<PrivacyPolicy />} />
 				</Route>
 			</Routes>
 		</Router>

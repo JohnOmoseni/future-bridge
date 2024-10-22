@@ -93,13 +93,13 @@ const Footer = () => {
 			<div className="mx-6 flex border-t border-grey px-3 py-5">
 				<span className="row-flex-start text-center text-sm leading-5 max-md:mx-auto">
 					<Link
-						to="#"
+						to="/privacy-policy"
 						className="border-right border-secondary pr-3 text-foreground-variant transition hover:underline"
 					>
 						Terms of Service
 					</Link>{" "}
 					<Link
-						to="#"
+						to="/privacy-policy"
 						className="border-l border-secondary px-3 text-foreground-variant transition hover:underline"
 					>
 						Privacy Policy
