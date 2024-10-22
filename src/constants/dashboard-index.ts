@@ -210,9 +210,8 @@ export const newsPost = [
 	{
 		id: 1,
 		image: news_1,
-		text: "A day in the life of St. Endas student: Balancing Academics and Fun",
-		link: "/dashboard/news/7",
-		videoUrl: "https://www.youtube.com/watch?v=AU_D0S7OwRg",
+		text: "Life at St. Endas College",
+		videoUrl: "https://www.youtube.com/watch?v=lYIMTzl97hY",
 	},
 	{
 		id: 2,

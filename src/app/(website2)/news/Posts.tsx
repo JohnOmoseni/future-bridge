@@ -46,15 +46,11 @@ function Posts() {
 											"rounded-xl shadow overflow-hidden transition-all hover:shadow-md relative col-span-1",
 											idx === 0 && "col-[1/-1]"
 										)}
-										style={
-											!videoUrl
-												? {
-														backgroundImage: `url(${image})`,
-														backgroundSize: "cover",
-														backgroundPosition: "center",
-												  }
-												: {}
-										}
+										style={{
+											backgroundImage: `url(${image})`,
+											backgroundSize: "cover",
+											backgroundPosition: "center",
+										}}
 									>
 										{videoUrl ? (
 											<iframe
@@ -65,7 +61,7 @@ function Posts() {
 												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 												allowFullScreen
 												frameBorder="0"
-												className="w-full border-0"
+												className="w-full border-0 overflow-hidden"
 											></iframe>
 										) : (
 											<div
@@ -96,7 +92,7 @@ function Posts() {
 											{idx !== 0 && (
 												<div className="w-full brightness-[0.8] mt-3 row-flex-btwn text-xs fap-4">
 													<Link
-														to={link}
+														to={link || ""}
 														className="hover:brightness-100 transition"
 													>
 														Read
