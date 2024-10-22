@@ -12,7 +12,11 @@ const DashboardFooter = () => {
 						to="/dashboard"
 						className="row-flex group relative block gap-3 md:!justify-start"
 					>
-						<img src={footer_logo} alt="" className="h-fit w-56 md:w-60" />
+						<img
+							src={footer_logo}
+							alt=""
+							className="h-fit w-56 md:w-60 object-contain"
+						/>
 					</Link>
 					<p className="mt-3.5 text-base leading-6 lg:mt-5 md:w-[35ch] lg:w-[40ch]">
 						At St. Enda's College Agbarho, we are dedicated to shaping the
