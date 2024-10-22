@@ -13,7 +13,7 @@ function Hero({ header, subtitle, containerStyles, hideSocials }: Props) {
 		<div
 			className={cn(
 				"bg-gradient-hero flex-column !justify-center max-h-[400px] gap-4 px-6 py-4 text-secondary-foreground sm:px-[5%]",
-				hideSocials ? "h-[40vh]" : "h-[55vh]",
+				hideSocials ? "h-[45vh]" : "h-[55vh]",
 				containerStyles
 			)}
 		>
