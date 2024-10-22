@@ -33,48 +33,85 @@ function Posts() {
 						})}
 					</ul>
 
-					<div className="flex-1 w-full grid gap-x-4 gap-y-3 max-[370px]:grid-cols-1 grid-cols-2 xl:grid-cols-[repeat(3,_minmax(0,_1fr))] grid-rows-[200px_160px_160px] sm:grid-rows-[180px_200px_200px] xl:grid-rows-[200px_250px] overflow-hidden">
-						{newsPost?.map(({ image, text, link, read_time }, idx) => (
-							<div
-								key={idx}
-								className={cn(
-									"rounded-xl shadow overflow-hidden transition-all hover:shadow-md bg-no-repeat bg-center bg-cover relative col-span-1",
-									idx === 0 && "col-[1/-1]"
-								)}
-								style={{ backgroundImage: `url(${image})` }}
-							>
-								<div
-									className={cn(
-										"bg-black w-full text-background-100 bg-opacity-10 backdrop-blur-md py-3.5 px-3 absolute bottom-0 left-0 min-h-16",
-										idx === 0 && "row-flex"
-									)}
-								>
-									<h4
+					<div className="flex-1 w-full grid gap-x-4 gap-y-3 max-[370px]:grid-cols-1 grid-cols-2 xl:grid-cols-[repeat(3,_minmax(0,_1fr))] news-post-sm sm:news-post-md xl:news-post-xl overflow-hidden">
+						{newsPost?.map(
+							({ image, text, link, read_time, videoUrl }, idx) => {
+								const embedUrl =
+									videoUrl && videoUrl.replace("watch?v=", "embed/");
+
+								return (
+									<div
+										key={idx}
 										className={cn(
-											"leading-5 text-sm brightness-90 line-clamp-2 pr-1",
-											idx === 0 && "text-center text-base tracking-wide"
+											"rounded-xl shadow overflow-hidden transition-all hover:shadow-md relative col-span-1",
+											idx === 0 && "col-[1/-1]"
 										)}
+										style={
+											!videoUrl
+												? {
+														backgroundImage: `url(${image})`,
+														backgroundSize: "cover",
+														backgroundPosition: "center",
+												  }
+												: {}
+										}
 									>
-										{text}
-									</h4>
+										{videoUrl ? (
+											<iframe
+												width="100%"
+												height="100%"
+												src={embedUrl}
+												title={text}
+												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+												allowFullScreen
+												frameBorder="0"
+												className="w-full border-0"
+											></iframe>
+										) : (
+											<div
+												className="w-full h-full"
+												style={{
+													backgroundImage: `url(${image})`,
+													backgroundSize: "cover",
+													backgroundPosition: "center",
+												}}
+											></div>
+										)}
 
-									{idx !== 0 && (
-										<div className="w-full brightness-[0.8] mt-3 row-flex-btwn text-xs fap-4">
-											<Link
-												to={link}
-												className="hover:brightness-100 transition"
+										<div
+											className={cn(
+												"bg-black w-full text-background-100 bg-opacity-10 backdrop-blur-md py-3.5 px-3 absolute bottom-0 left-0 min-h-16",
+												idx === 0 && "row-flex bg-opacity-50"
+											)}
+										>
+											<h4
+												className={cn(
+													"leading-5 text-sm brightness-90 line-clamp-2 pr-1",
+													idx === 0 && "text-center text-base tracking-wide"
+												)}
 											>
-												Read
-											</Link>
+												{text}
+											</h4>
 
-											<span className="tracking-wide">
-												{read_time || "5mins read"}
-											</span>
+											{idx !== 0 && (
+												<div className="w-full brightness-[0.8] mt-3 row-flex-btwn text-xs fap-4">
+													<Link
+														to={link}
+														className="hover:brightness-100 transition"
+													>
+														Read
+													</Link>
+
+													<span className="tracking-wide">
+														{read_time || "5mins read"}
+													</span>
+												</div>
+											)}
 										</div>
-									)}
-								</div>
-							</div>
-						))}
+									</div>
+								);
+							}
+						)}
 					</div>
 				</div>
 			</div>

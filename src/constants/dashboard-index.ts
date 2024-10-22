@@ -212,7 +212,7 @@ export const newsPost = [
 		image: news_1,
 		text: "A day in the life of St. Endas student: Balancing Academics and Fun",
 		link: "/dashboard/news/7",
-		read_time: "",
+		videoUrl: "https://www.youtube.com/watch?v=AU_D0S7OwRg",
 	},
 	{
 		id: 2,

@@ -164,6 +164,16 @@
 	.grid-cols-features {
 		grid-template-columns: 2fr minmax(300px, 1fr);
 	}
+	.news-post-sm {
+		grid-template-rows: 200px repeat(auto-fill, 160px);
+	}
+	.news-post-md {
+		grid-template-rows: 200px repeat(auto-fill, 180px);
+	}
+	.news-post-xl {
+		grid-template-rows: 230px repeat(auto-fill, 210px);
+	}
+
 	.about-main-sm {
 		grid-template-columns: 1fr;
 		grid-template-rows: max-content 280px max-content 400px max-content 320px;
