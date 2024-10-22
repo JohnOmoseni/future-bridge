@@ -33,7 +33,7 @@ function Posts() {
 						})}
 					</ul>
 
-					<div className="flex-1 w-full grid gap-x-4 gap-y-3 max-[370px]:grid-cols-1 grid-cols-2 xl:grid-cols-[repeat(3,_minmax(0,_1fr))] news-post-sm sm:news-post-md xl:news-post-xl overflow-hidden">
+					<div className="flex-1 w-full grid gap-x-4 gap-y-3 max-[370px]:grid-cols-1 grid-cols-2 xl:grid-cols-[repeat(3,_minmax(0,_1fr))] news-post-sm xl:news-post-xl overflow-hidden">
 						{newsPost?.map(
 							({ image, text, link, read_time, videoUrl }, idx) => {
 								const embedUrl =
