@@ -53,16 +53,17 @@ function Posts() {
 										}}
 									>
 										{videoUrl ? (
-											<iframe
-												width="100%"
-												height="100%"
-												src={embedUrl}
-												title={text}
-												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-												allowFullScreen
-												frameBorder="0"
-												className="w-full border-0 overflow-hidden"
-											></iframe>
+											<>
+												<iframe
+													width="100%"
+													height="100%"
+													src={embedUrl}
+													title={text}
+													allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+													allowFullScreen
+													className="w-full border-0 overflow-hidden"
+												></iframe>
+											</>
 										) : (
 											<div
 												className="w-full h-full"
