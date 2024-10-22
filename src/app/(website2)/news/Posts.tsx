@@ -83,7 +83,7 @@ function Posts() {
 										>
 											<h4
 												className={cn(
-													"leading-5 text-sm brightness-90 line-clamp-2 pr-1",
+													"leading-5 font-semibold text-sm brightness-90 line-clamp-2 pr-1",
 													idx === 0 && "text-center text-base tracking-wide"
 												)}
 											>
