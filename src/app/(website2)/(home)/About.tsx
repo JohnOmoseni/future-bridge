@@ -23,11 +23,11 @@ function About() {
 				</p>
 			</div>
 
-			<div className="max-w-xl mx-auto  rounded-2xl sm:rounded-xl overflow-hidden">
+			<div className="max-w-xl mx-auto rounded-2xl sm:rounded-xl overflow-hidden">
 				<img
 					src={about}
 					alt=""
-					className="h-full object-cover object-center min-h-[300px] lg:min-h-[330px]"
+					className="h-full object-cover object-center min-h-[300px] max-h-[360px] lg:min-h-[330px]"
 				/>
 			</div>
 		</div>

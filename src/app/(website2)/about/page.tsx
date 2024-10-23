@@ -31,7 +31,7 @@ function About() {
 								src={img}
 								alt=""
 								className={cn(
-									"size-full object-coverz max-sm:mx-auto sm:rounded-sm max-h-[350px] md:min-w-[400px] max-sm:order-1 max-sm:rounded-sm",
+									"size-full object-cover max-sm:mx-auto sm:rounded-sm max-h-[350px]md:max-h-[460px] md:min-w-[400px] max-sm:order-1 max-sm:rounded-sm ",
 									idx === 1 && " order-1"
 								)}
 							/>
