@@ -32,8 +32,6 @@ function ApplicationPage() {
 		setStep((prev) => Math.max(1, prev - 1));
 	};
 
-	console.log("REQUEST ID", requestId);
-
 	return (
 		<SectionWrapper>
 			<MultiStepForm step={step} />

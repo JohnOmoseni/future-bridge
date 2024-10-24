@@ -17,9 +17,10 @@ export function useGetRequestId(): any {
 		if (!storedRequestId && !hasFetched) {
 			refetch().then((res) => {
 				if (res.data?.request_id) {
-					toast.success("Request ID generated successfully!");
 					localStorage.setItem("REQUEST_ID", res?.data?.request_id);
 					setHasFetched(true);
+				} else {
+					toast.error("Error generating Request ID");
 				}
 			});
 		}
