@@ -13,7 +13,7 @@ export default function Home() {
 		<>
 			<Hero />
 
-			<main className="relative">
+			<main className="relative overflow-hidden">
 				<SectionWrapper containerStyles="bg-background-100" id="about">
 					<AboutSection />
 				</SectionWrapper>

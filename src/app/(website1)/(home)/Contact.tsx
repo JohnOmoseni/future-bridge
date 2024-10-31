@@ -25,7 +25,7 @@ const HomeContact = () => {
 					</div>
 				</div>
 
-				<div className="left-0 top-[10%] mx-auto w-full max-w-xl rounded-md bg-secondary shadow-sm max-lg:h-max max-lg:max-h-[320px] lg:absolute lg:min-h-[360px] lg:max-w-[320px] lg:rounded-sm">
+				<div className="lg:eft-0 lg:top-[10%] mx-auto w-full max-w-xl rounded-md bg-secondary shadow-sm max-lg:max-h-[300px] lg:absolute lg:min-h-[360px] lg:max-w-[320px] lg:rounded-sm">
 					<div className="px-7 py-8 lg:px-10 lg:py-12">
 						<p className="text-lg font-semibold tracking-wide text-secondary-foreground">
 							Contact us
