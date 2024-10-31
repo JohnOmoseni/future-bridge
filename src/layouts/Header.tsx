@@ -13,7 +13,7 @@ function Header({ setOpenMenu }: HeaderProps) {
 	const isSuccessPage = pathname.includes("get-started/success");
 
 	return (
-		<div className="sticky top-0 z-[999] h-[68px] max-md:max-h-[75px] bg-background-100 w-full px-3 py-3 shadow-sm md:pb-0">
+		<div className="sticky top-0 z-[999] min-h-[68px] max-md:max-h-[75px] bg-background-100 w-full px-3 py-3 shadow-sm md:pb-0">
 			<div className="row-flex-btwn mx-auto gap-4 sm:w-[96%]">
 				<Link to="/" className="">
 					<Logo className="h-fit w-fit max-md:mx-auto max-sm:max-w-[260px]" />
